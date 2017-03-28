@@ -3,8 +3,8 @@ html {
 }
 
 .item {
-    -webkit-filter: contrast(127%) brightness(70%);
-    filter:contrast(127%) brightness(70%);
+    -webkit-filter: contrast(127%) brightness(63%);
+    filter:contrast(127%) brightness(63%);
 }
 
 
