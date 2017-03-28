@@ -2,6 +2,11 @@ html {
     background: black;
 }
 
+.item {
+    -webkit-filter: contrast(127%) brightness(70%);
+    filter:contrast(127%) brightness(70%);
+}
+
 
 
 .carousel-fade .carousel-inner .item {
@@ -26,6 +31,8 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+
 }
 .item:nth-child(2) {
     background: url(../img/nepal2.jpeg) no-repeat center center fixed;
