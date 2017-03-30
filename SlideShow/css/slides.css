@@ -2,6 +2,9 @@ html {
     background: black;
 }
 
+body{
+    background-color: transparent;
+}
 .item {
     -webkit-filter: contrast(127%) brightness(63%);
     filter:contrast(127%) brightness(63%);
@@ -138,8 +141,8 @@ html {
 
 /*top menu*/
 .navbar-inverse {
-    background: black;
-    border-color: #0f0d0b;
+    color: transparent;
+    background: rgba(0,0,0,0.9);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
     background-repeat: repeat-x;
