@@ -148,3 +148,15 @@ body{
     background-repeat: repeat-x;
     border-radius: 4px;
 }
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+}
