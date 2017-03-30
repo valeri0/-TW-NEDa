@@ -12,53 +12,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
-<style>
 
-    .btn {
-        display: inline-block;
-        padding: 30px 50px;
-        margin-bottom: 0;
-        font-size: 25px;
-        font-weight: bold;
-        line-height: 1.42857143;
-        text-align: center;
-        white-space: normal;
-        vertical-align: middle;
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-image: none;
-        transition: 0.4s;
-        border-color: white;
-		border-width: 3.7px;
-        color: white;
-    }
-	
-    .btn:focus,
-    .btn:active:focus,
-    .btn.active:focus,
-    .btn.focus,
-    .btn:active.focus,
-    .btn.active.focus {
-        outline: 5px auto -webkit-focus-ring-color;
-        outline-offset: -2px;
-    }
-	
-    .btn:hover,
-    .btn:focus,
-    .btn.focus {
-        color: white;
-        background-color: rgba(0,0,0,0.6);
-        text-decoration: none;
-        border-color:white;
-    }
-
-</style>
 <body>
+
+
     <div id="MyCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
         <div class="carousel-inner" role="listbox" >
@@ -90,10 +47,33 @@
 
     </div>
 
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">NEDa</a>
+
+            </div>
+
+            <!--Menu Items-->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Content</a></li>
+                    <li><a href="#">About</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
     <div class="carousel-caption-custom">
 
-        <a href="http://i1.kym-cdn.com/photos/images/original/000/234/739/fa5.jpg" type="button" class="btn">Welcome to the earthquake party</a>
+        <a href="http://i1.kym-cdn.com/photos/images/original/000/234/739/fa5.jpg" type="button" class="btn">10 parties that went horribly wrong</a>
     </div>
+
+
 
     <script>
         $('.carousel').carousel({
