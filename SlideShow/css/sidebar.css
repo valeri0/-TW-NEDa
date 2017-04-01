@@ -38,7 +38,7 @@ body {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 15px
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -88,19 +88,19 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 50px;
+        padding-left: 0px;
     }
 
     #wrapper.toggled {
-        padding-left: 300px;
+        padding-left: 280px;
     }
 
     #sidebar-wrapper {
-        width: 50px;
+        width: 0px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 300px;
+        width: 280px;
     }
 
     #page-content-wrapper {
@@ -117,7 +117,7 @@ body {
 /* Search bar styles */
 
 input[name="search"]{
-    width: 250px;
+    width: 225px;
     height: 40px;
     background: #2b303b;
     border: none;
@@ -186,4 +186,9 @@ input[type=text]:hover, input[type=text]:focus, input[type=text]:active{
     position: absolute;
     top: 0;
     left: 4px;
+}
+
+/* Paddong for navbar to not overlap with the sidebar */
+.navbar-inverse{
+    padding-left: 25px;
 }
