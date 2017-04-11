@@ -12,8 +12,16 @@
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../js/InteractiveMap.js"></script>
 </head>
 
+<style>
+    #map {
+        width: 100%;
+        height: 600px;
+        background-color: grey;
+    }
+</style>
 
 <body>
 
@@ -139,9 +147,12 @@
             <div class="row">
                 <div class="col-lg-12">
                    <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="center-block embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602094.7162163067!2d82.59973367143859!3d28.15651362533258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995e8c77d2e68cf%3A0x34a29abcd0cc86de!2sNepal!5e0!3m2!1sro!2sro!4v1491293013163" width="600" height="450" frameborder="0" style="border:0" allowfullscreen scrolling="no"></iframe>
+
+                       <!-- Interactive Map -->
+                       <div id="map"></div>
+
+                   </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -150,24 +161,11 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- MENU TOGGLE SCRIPT -->
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
+<!-- SIDEBAR SCRIPT -->
+<script src="../js/sidebar.js"></script>
 
-<!-- SPINNER SCRIPT -->
-<script>
-    (function ($) {
-        $('.spinner .btn:first-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-        });
-        $('.spinner .btn:last-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-        });
-    })(jQuery);
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyfB7FJC_mbyQGI7rAB5QtBiLKpTucyg&callback=initMap">
 </script>
 
 </body>
