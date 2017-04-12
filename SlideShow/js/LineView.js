@@ -1,7 +1,7 @@
 /**
  * Created by Ovidiu on 07-Apr-17.
  */
-google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
@@ -11,20 +11,23 @@ function drawChart() {
     data.addColumn('number', 'Magnitude');
 
     data.addRows([
-        [new Date(2011, 3, 5), 1.2],
-        [new Date(2005, 2, 10), 2.9],
-        [new Date(2012, 7, 21), 3.5],
-        [new Date(2002, 12, 3), 4.1],
-        [new Date(2016, 9, 10), 5],
-        [new Date(2015, 8, 5), 6.3],
-        [new Date(2007, 9, 5), 4.3],
-        [new Date(2010, 8, 15), 2.5],
+
         [new Date(2000, 8, 25), 3.6],
+        [new Date(2002, 12, 3), 4.1],
+        [new Date(2005, 2, 10), 2.9],
+        [new Date(2007, 9, 5), 4.3],
         [new Date(2008, 3, 15), 4.6],
+        [new Date(2010, 8, 15), 2.5],
+        [new Date(2011, 3, 5), 1.2],
+        [new Date(2012, 7, 21), 3.5],
+        [new Date(2015, 8, 5), 6.3],
+        [new Date(2016, 9, 10), 5]
+
     ]);
 
     var options = {
         colors:['#273746'],
+        curveType: 'function',
         hAxis: {
             title: 'Earthquake Date'
         },
@@ -33,8 +36,8 @@ function drawChart() {
         }
     };
 
-    var chart = new google.visualization.ColumnChart(
-        document.getElementById('chart_div'));
+    var chart = new google.visualization.LineChart(
+        document.getElementById('line_div'));
 
     chart.draw(data, options);
 }

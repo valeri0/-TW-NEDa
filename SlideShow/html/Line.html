@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NEDa-Interactive Map</title>
+    <title>NEDa-Chart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
@@ -12,16 +12,12 @@
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="../js/InteractiveMap.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../js/LineView.js"></script>
+
+
 </head>
 
-<style>
-    #map {
-        width: 100%;
-        height: 600px;
-        background-color: grey;
-    }
-</style>
 
 <body>
 
@@ -131,8 +127,8 @@
             <!--Menu Items-->
             <div class="collapse navbar-collapse" id="mainNavBar">
                 <ul class="nav navbar-nav">
-                    <li><a href="Line.html">Linear View</a></li>
-                    <li class="active"><a href="#">Interactive Map</a></li>
+                    <li class="active"><a href="#">Linear View</a></li>
+                    <li><a href="InteractiveMap.html">Interactive Map</a></li>
                     <li><a href="ColumnView.html">Column View</a></li>
 
                 </ul>
@@ -140,6 +136,7 @@
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="SlideShow.html">Back to homepage</a></li>
                 </ul>
+
             </div>
 
         </div>
@@ -150,12 +147,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                   <div class="embed-responsive embed-responsive-16by9">
+                    <div id="line_div" style="width: 900px; height: 500px;"></div>
 
-                       <!-- Interactive Map -->
-                       <div id="map"></div>
-
-                   </div>
                 </div>
             </div>
         </div>
@@ -165,11 +158,24 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- SIDEBAR SCRIPT -->
-<script src="../js/sidebar.js"></script>
+<!-- MENU TOGGLE SCRIPT -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyfB7FJC_mbyQGI7rAB5QtBiLKpTucyg&callback=initMap">
+<!-- SPINNER SCRIPT -->
+<script>
+    (function ($) {
+        $('.spinner .btn:first-of-type').on('click', function() {
+            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+        });
+        $('.spinner .btn:last-of-type').on('click', function() {
+            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+        });
+    })(jQuery);
 </script>
 
 </body>
