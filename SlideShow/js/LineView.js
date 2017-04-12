@@ -33,7 +33,8 @@ function drawChart() {
         },
         vAxis: {
             title: 'Magnitude'
-        }
+        },
+        animation:{"startup": true, duration: 1300, easing: 'out'},
     };
 
     var chart = new google.visualization.LineChart(

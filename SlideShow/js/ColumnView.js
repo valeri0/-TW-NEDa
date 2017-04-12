@@ -2,9 +2,9 @@
  * Created by Mihaila on 4/12/2017.
  */
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(initialize);
 
-function drawChart() {
+function initialize() {
 
     var data = new google.visualization.DataTable();
     data.addColumn('string','Stats');
@@ -19,6 +19,7 @@ function drawChart() {
 
     var options = {
         colors:['#16C77B','#70C716','#9F1311','#6533ED','#D3CB1E'],
+        animation:{"startup": true, duration: 1300, easing: 'out'},
         title:'District Sindhupalchowk',
         subtitle:'subtitle',
         bars: 'horizontal',
@@ -28,6 +29,35 @@ function drawChart() {
     var chart = new google.visualization.ColumnChart(
         document.getElementById('column_id'));
 
+    var button = document.getElementById('demo_button');
 
-    chart.draw(data, options);
+    function drawChart(){
+
+        button.disabled=true;
+
+        google.visualization.events.addListener(chart,'ready',function(){
+            button.disabled=false;
+        });
+
+        chart.draw(data,options);
+    }
+
+    button.onclick=function(){
+        var totalHouses = 67000-data.getValue(0,1);
+        var dead = 6000-data.getValue(0,2);
+        var injured = 2000-data.getValue(0,3);
+        var houseFullyDestroyed = 65000-data.getValue(0,4);
+        var housePartiallyDestroyed = 4000-data.getValue(0,5);
+
+        data.setValue(0,1,totalHouses);
+        data.setValue(0,2,dead);
+        data.setValue(0,3,injured);
+        data.setValue(0,4,houseFullyDestroyed);
+        data.setValue(0,5,housePartiallyDestroyed);
+
+        drawChart();
+
+    };
+
+    drawChart();
 }
