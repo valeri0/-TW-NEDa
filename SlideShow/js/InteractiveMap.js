@@ -4,7 +4,7 @@
 
 var map;
 var kmlLayer;
-var src = 'https://data.humdata.org/dataset/a6df7be3-8fc9-4a55-8472-8cc567584b2d/resource/8aac9611-8352-48f1-83f7-ea3652146cf8/download/landslides-from-nepal-earthquake.kmz';
+var src = 'http://students.info.uaic.ro/~eduard.tuduri/20150508-hazard-db.kml';
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -13,9 +13,32 @@ function initMap() {
     });
 
     kmlLayer = new google.maps.KmlLayer(src, {
-        suppressInfoWindows: true,
         preserveViewport: false,
+        suppressInfoWindows: true,
+        url: src,
         map: map
+    });
+
+    var infoWindow = new google.maps.InfoWindow();
+    kmlLayer.addListener('click', function (kmlEvent) {
+        var text = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Landslide</h1>'+
+            '<h3 id="secondHeading">' + kmlEvent.latLng + '</h3>' +
+            '<div id="bodyContent">'+
+            '<p>A large (~200 m wide x 190 m) landslide that occurred between Apr 27 and May 2 has partially dammed the Marsyangdi River, resulting in a lake to become impounded upstream. ' +
+            'Approximately 400 m upstream of the landslide is a second, smaller landslide (~85 x 55 m) that occurred earlier (present on Apr 27 image) and constricted the river, resulting in another lake.' +
+            ' These two lakes now form a single lake, more than 500 m long and ~50 m wide. ' +
+            'A channel is draining the lake at its southernmost end but cannot evacuate water as quickly as it is being added.</p>'+
+            '<h4>Analyst: <b>Dan Shugar</b></h4>' +
+            '</div>' +
+            '</div>';
+
+
+        infoWindow.setContent(text);
+        infoWindow.setPosition(kmlEvent.latLng);
+        infoWindow.open(map);
     });
 }
 
