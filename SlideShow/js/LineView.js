@@ -10,6 +10,8 @@ function drawChart() {
     data.addColumn('date', 'Date of earthquake');
     data.addColumn('number', 'Magnitude');
 
+    var export_png = document.getElementById("export_png");
+
     data.addRows([
 
         [new Date(2000, 8, 25), 3.6],
@@ -39,6 +41,12 @@ function drawChart() {
 
     var chart = new google.visualization.LineChart(
         document.getElementById('line_div'));
+
+    google.visualization.events.addListener(chart,'ready',function(){
+
+        export_png.innerHTML='<a href="' + chart.getImageURI() + '" download="chart"  class="btn btn-primary " role="button">Export as PNG</a>';
+       
+    });
 
     chart.draw(data, options);
 }
