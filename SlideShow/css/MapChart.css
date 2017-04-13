@@ -9,13 +9,19 @@
     fill-opacity: 1;
     stroke:white;
     stroke-opacity: 1;
-    stroke-width:0.5;
+    stroke-width:1;
+    transition: all 0.3s;
+    transform-origin: 50% 50%;
+
 }
 .land:hover{
-    fill: #980504;
-    stroke: black;
-    filter:url(#drop-shadow);
-    stroke-width:1;
+    fill: #ac0e08;
+    transform: scale(1.03);
+    stroke-width: 1;
+    stroke: #ac0e08;
+    position: relative;
+    z-index: -1;
+
 
 }
 
