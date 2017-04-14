@@ -26,6 +26,9 @@ function initialize() {
         explorer: { axis: 'vertical'}
     };
 
+    var export_id = document.getElementById('export_png');
+
+
     var chart = new google.visualization.ColumnChart(
         document.getElementById('column_id'));
 
@@ -36,6 +39,10 @@ function initialize() {
         button.disabled=true;
 
         google.visualization.events.addListener(chart,'ready',function(){
+
+
+
+            export_id.innerHTML='<a href="' + chart.getImageURI() + '" download="chart"  class="btn btn-primary " role="button">Export as PNG</a>';
             button.disabled=false;
         });
 
