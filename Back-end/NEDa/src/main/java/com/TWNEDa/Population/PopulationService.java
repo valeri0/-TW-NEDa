@@ -26,9 +26,16 @@ public class PopulationService {
 
     public List<Population> getDataByZone(String zone){
         List<Population> population = new ArrayList<>();
-        populationRepository.findByZone(zone).forEach(population :: add);
+        populationRepository.findByZoneIgnoreCase(zone).forEach(population :: add);
         return population;
     }
+
+    public List<Object> getDeathsbyZone(String zone){
+        List<Object> zones = new ArrayList<>();
+        return zones=populationRepository.findDeathsbyZone(zone);
+    }
+
+
     public void addData(Population population){
         populationRepository.save(population);
     }

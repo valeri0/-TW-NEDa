@@ -25,9 +25,14 @@ public class HouseholdsService {
     }
 
     public List<Household> getDataByZone(String zone){
-        List<Household> population = new ArrayList<>();
-        householdsRepository.findByZone(zone).forEach(population :: add);
-        return population;
+        List<Household> households = new ArrayList<>();
+        householdsRepository.findByZoneIgnoreCase(zone).forEach(households :: add);
+        return households;
+    }
+
+    public List<Object> getHousesByZone(String zone){
+        List<Object> objects = new ArrayList<>();
+        return objects = householdsRepository.findHousesByZone(zone);
     }
 
     public void addData(Household household){

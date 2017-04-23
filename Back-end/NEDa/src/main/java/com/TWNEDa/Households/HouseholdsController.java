@@ -28,6 +28,12 @@ public class HouseholdsController {
         return householdsService.getDataByZone(zone);
     }
 
+
+    @RequestMapping("/households/houses/{zone}")
+    public List<Object> getDeathsbyZone(@PathVariable String zone){
+        return householdsService.getHousesByZone(zone);
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "households")
     public void addData(@RequestBody Household household){
         householdsService.addData(household);

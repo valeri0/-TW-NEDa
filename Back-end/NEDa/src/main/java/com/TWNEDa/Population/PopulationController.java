@@ -28,6 +28,11 @@ public class PopulationController {
         return populationService.getDataByZone(zone);
     }
 
+    @RequestMapping("/population/deaths/{zone}")
+    public List<Object> getDeathsbyZone(@PathVariable String zone){
+       return populationService.getDeathsbyZone(zone);
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "/population")
     public void addData(@RequestBody Population population){
         populationService.addData(population);
