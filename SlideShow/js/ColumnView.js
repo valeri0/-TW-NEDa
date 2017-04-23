@@ -68,3 +68,7 @@ function initialize() {
 
     drawChart();
 }
+
+$(window).resize(function(){
+	initialize();
+});

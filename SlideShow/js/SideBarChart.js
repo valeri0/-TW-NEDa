@@ -44,3 +44,7 @@ function drawRightY() {
 
     chart.draw(data, options_stacked);
 }
+
+$(window).resize(function(){
+	drawRightY();
+});

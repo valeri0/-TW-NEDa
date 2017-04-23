@@ -24,3 +24,9 @@
     color: white;
     text-decoration: none;
 }
+
+@media (min-width: 950px) {
+    .pull-right-sm {
+        float: right !important;
+    }
+}

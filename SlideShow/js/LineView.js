@@ -50,3 +50,7 @@ function drawChart() {
 
     chart.draw(data, options);
 }
+
+$(window).resize(function(){
+	drawChart();
+});
