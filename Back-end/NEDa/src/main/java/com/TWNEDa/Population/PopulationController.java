@@ -33,6 +33,11 @@ public class PopulationController {
        return populationService.getDeathsbyZone(zone);
     }
 
+    @RequestMapping("district/population/stats/{districtName}")
+    public Object getDistrictStats(@PathVariable String districtName){
+        return populationService.getDistrictStats(districtName);
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "/population")
     public void addData(@RequestBody Population population){
         populationService.addData(population);
@@ -42,6 +47,8 @@ public class PopulationController {
     public void updateTopic(@RequestBody Population population,@PathVariable int districtId){
         populationService.updateData(population,districtId);
     }
+
+
 
     @RequestMapping(method=RequestMethod.DELETE, value="population/district/{districtId}")
     public void  deleteTopic(@PathVariable int districtId){

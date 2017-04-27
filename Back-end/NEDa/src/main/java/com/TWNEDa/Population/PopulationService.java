@@ -35,6 +35,10 @@ public class PopulationService {
         return zones=populationRepository.findDeathsbyZone(zone);
     }
 
+    public Object getDistrictStats(String districtName){
+        return populationRepository.getDistrictStats(districtName);
+    }
+
 
     public void addData(Population population){
         populationRepository.save(population);

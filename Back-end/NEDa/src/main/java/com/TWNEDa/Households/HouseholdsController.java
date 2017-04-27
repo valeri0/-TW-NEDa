@@ -28,6 +28,11 @@ public class HouseholdsController {
         return householdsService.getDataByZone(zone);
     }
 
+    @RequestMapping("district/household/stats/{districtName}")
+    public Object getDistrictStats(@PathVariable String districtName){
+        return householdsService.getDistrictStats(districtName);
+    }
+
 
     @RequestMapping("/households/houses/{zone}")
     public List<Object> getDeathsbyZone(@PathVariable String zone){
@@ -48,4 +53,5 @@ public class HouseholdsController {
     public void  deleteTopic(@PathVariable int districtId){
         householdsService.deleteData(districtId);
     }
+
 }

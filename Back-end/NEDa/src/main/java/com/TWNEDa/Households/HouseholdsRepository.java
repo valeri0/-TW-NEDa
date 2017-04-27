@@ -13,5 +13,9 @@ public interface HouseholdsRepository extends JpaRepository<Household, Integer> 
     public List<Household> findByZoneIgnoreCase (String zone);
 
     @Query("select  sum(total_household), sum(govtbuild_damage)+sum(publicbuild_damage), sum(govtbuild_partdamage)+sum(publicbuild_partdamage) from Household  where UPPER(zone) = UPPER(?1)")
-    List<Object> findHousesByZone (String zone);
+    public List<Object> findHousesByZone (String zone);
+
+    @Query("select total_household, govtbuild_damage + publicbuild_damage ,govtbuild_partdamage+publicbuild_partdamage from Household where district=?1")
+    public Object getDistrictStats(String district);
+
 }

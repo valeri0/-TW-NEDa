@@ -35,6 +35,10 @@ public class HouseholdsService {
         return objects = householdsRepository.findHousesByZone(zone);
     }
 
+    public Object getDistrictStats(String districtName){
+        return householdsRepository.getDistrictStats(districtName);
+    }
+
     public void addData(Household household){
         householdsRepository.save(household);
     }
@@ -46,5 +50,6 @@ public class HouseholdsService {
     public void deleteData(int districtId){
         householdsRepository.delete(districtId);
     }
+
 
 }

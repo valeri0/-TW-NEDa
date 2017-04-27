@@ -16,4 +16,7 @@ public interface PopulationRepository extends JpaRepository<Population,Integer> 
 
     @Query("select sum(total_population), sum(tot_deaths), sum(total_injured) from Population where UPPER(zone) = UPPER(?1)")
     List<Object> findDeathsbyZone (String zone);
+
+    @Query("select tot_deaths,total_injured from Population where lower(district) = lower (?1)")
+    Object getDistrictStats(String districtName);
 }

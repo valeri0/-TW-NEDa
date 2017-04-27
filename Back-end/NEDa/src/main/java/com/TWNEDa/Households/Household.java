@@ -1,5 +1,7 @@
 package com.TWNEDa.Households;
 
+import com.TWNEDa.Population.Population;
+
 import javax.persistence.*;
 
 /**
