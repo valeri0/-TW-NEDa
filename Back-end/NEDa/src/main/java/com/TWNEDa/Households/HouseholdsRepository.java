@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by Ovidiu on 22-Apr-17.
  */
+@Repository
 public interface HouseholdsRepository extends JpaRepository<Household, Integer> {
 
     public List<Household> findByZoneIgnoreCase (String zone);

@@ -1,5 +1,8 @@
 package com.TWNEDa.Households;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +16,18 @@ public class HouseholdsController {
     @Autowired
     private HouseholdsService householdsService;
 
-    @RequestMapping("/households")
+    @ApiOperation(value="getAllHouseholds",nickname = "getAllHouseholds")
+    @RequestMapping("neda/households")
+    @ApiResponses(value={
+
+            @ApiResponse(code = 200, message = "Success", response = Household.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")
+            }
+    )
+
     public List<Household> getAllHouseholds(){
         return householdsService.getAllHouseholds();
     }
