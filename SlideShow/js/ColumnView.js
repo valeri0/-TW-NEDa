@@ -1,6 +1,17 @@
 /**
  * Created by Mihaila on 4/12/2017.
  */
+
+var getRequest = new XMLHttpRequest();
+getRequest.open('GET','http://localhost:8081/population/district/71')
+getRequest.onload = function(){
+    var object = JSON.parse(getRequest.responseText);
+    console.log(object[1]);
+}
+getRequest.send();
+
+
+
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(initialize);
 
