@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by Ovidiu on 22-Apr-17.
  */
+@CrossOrigin("http://localhost:63342")
 @RestController
 public class PopulationController {
     @Autowired
