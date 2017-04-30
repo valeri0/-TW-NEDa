@@ -6,6 +6,9 @@ var map;
 var kmlLayer;
 var layer1;
 var layer2;
+var infoWindow;
+var marker;
+var marker2;
 var src = 'http://students.info.uaic.ro/~eduard.tuduri/nepal_earthquakes.kml';
 
 function degreesToRadians(degrees) {
@@ -60,12 +63,12 @@ function initMap() {
         strokeWeight: 1.3
     });
 
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         map: map,
         position: {lat: 28.147, lng: 84.708}
     });
 
-    var infoWindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
 
     marker.addListener('click', function (event) {
         var text = '<div id="content">'+
@@ -86,7 +89,7 @@ function initMap() {
         infoWindow.open(map);
     });
 
-    var marker2 = new google.maps.Marker({
+    marker2 = new google.maps.Marker({
         map: map,
         position: {lat: 27.809, lng: 86.066},
         icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png'

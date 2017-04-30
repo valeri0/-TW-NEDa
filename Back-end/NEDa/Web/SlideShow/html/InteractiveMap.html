@@ -38,72 +38,33 @@
             </li>
             <li>
                 <div class="radio-filter">
-                    <a href="#">Number of victims :</a>
+                    <a href="#">Risk :</a>
 
-                    <form>
+                    <form id="riskForm">
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Under 1000</label>
+                            <label><input type="radio" name="optradio" value="low">Low</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">1000 - 5000</label>
+                            <label><input type="radio" name="optradio" value="med">Medium</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">5000 - 10000</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 10000</label>
+                            <label><input type="radio" name="optradio" value="high">High</label>
                         </div>
                     </form>
                 </div>
             </li>
             <li>
                 <div class="radio-filter">
-                    <a href="#">Expenses :</a>
+                    <a href="#">Description :</a>
 
-                    <form>
+                    <form id="descriptionForm">
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Under 10000$</label>
+                            <label><input type="radio" name="optradio">Has description</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">10000$ - 50000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">50000$ - 100000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 100000$</label>
+                            <label><input type="radio" name="optradio">No description</label>
                         </div>
                     </form>
-                </div>
-            </li>
-            <li>
-                <div class="radio-filter">
-                    <a href="#">Richter scale :</a>
-
-                    <form>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Under 3</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">3 - 5</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">5 - 8</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 8</label>
-                        </div>
-                    </form>
-                </div>
-            </li>
-            <li>
-                <a href="#">Year :</a>
-                <div class="input-group spinner">
-                    <input type="text" class="form-control" value="2017">
-                    <div class="input-group-btn-vertical">
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-up"></span></button>
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-down"></span></button>
-                    </div>
                 </div>
             </li>
         </ul>
