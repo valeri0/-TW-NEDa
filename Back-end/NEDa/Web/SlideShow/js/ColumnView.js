@@ -26,7 +26,7 @@ function initialize() {
 
     addEventHandlers();
 
-    var districtId = 21;
+    var districtId = 23;
 
     getData(districtId, initData);
 
@@ -44,15 +44,15 @@ function initialize() {
             ['Information', 200, populationData.tot_deaths, populationData.total_injured, 300, 100]
         ]);
 
-        drawChart(data);
+        drawChart(data, populationData.district);
     }
 
-    function drawChart(data){
+    function drawChart(data, name){
 
         var options = {
             colors:['#16C77B','#70C716','#9F1311','#6533ED','#D3CB1E'],
             animation:{"startup": true, duration: 1300, easing: 'out'},
-            title:'District Sindhupalchowk',
+            title:'District ' + name,
             subtitle:'subtitle',
             bars: 'horizontal',
             explorer: { axis: 'vertical'}
@@ -90,7 +90,7 @@ function initialize() {
         data.setValue(0,4,houseFullyDestroyed);
         data.setValue(0,5,housePartiallyDestroyed);
 
-        drawChart(data);
+        drawChart(data, name);
 
     };
 

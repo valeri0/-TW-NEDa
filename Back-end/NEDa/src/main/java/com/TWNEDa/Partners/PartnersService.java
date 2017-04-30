@@ -16,7 +16,7 @@ public class PartnersService {
 
     public List<Partners> getAllPartners(){
         List<Partners> partners= new ArrayList<>();
-        partnersRepository.findAll().forEach(partners :: add);
+        partners.addAll(partnersRepository.findAll());
         return partners;
     }
 }
