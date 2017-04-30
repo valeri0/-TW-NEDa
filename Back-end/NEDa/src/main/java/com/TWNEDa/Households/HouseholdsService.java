@@ -35,8 +35,8 @@ public class HouseholdsService {
         return objects = householdsRepository.findHousesByZone(zone);
     }
 
-    public Object getDistrictStats(String districtName){
-        return householdsRepository.getDistrictStats(districtName);
+    public Object getDistrictStats(int districtId){
+        return householdsRepository.getDistrictStats(districtId);
     }
 
     public void addData(Household household){

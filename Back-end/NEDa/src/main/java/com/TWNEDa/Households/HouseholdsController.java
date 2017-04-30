@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by Ovidiu on 22-Apr-17.
  */
+@CrossOrigin("http://localhost:63342")
 @RestController
 public class HouseholdsController {
     @Autowired
@@ -30,9 +31,9 @@ public class HouseholdsController {
         return householdsService.getDataByZone(zone);
     }
 
-    @RequestMapping("district/household/stats/{districtName}")
-    public Object getDistrictStats(@PathVariable String districtName){
-        return householdsService.getDistrictStats(districtName);
+    @RequestMapping("district/household/stats/{districtId}")
+    public Object getDistrictStats(@PathVariable int districtId){
+        return householdsService.getDistrictStats(districtId);
     }
 
 

@@ -18,7 +18,7 @@ public interface HouseholdsRepository extends JpaRepository<Household, Integer> 
     @Query("select  sum(total_household), sum(govtbuild_damage)+sum(publicbuild_damage), sum(govtbuild_partdamage)+sum(publicbuild_partdamage) from Household  where UPPER(zone) = UPPER(?1)")
     public List<Object> findHousesByZone (String zone);
 
-    @Query("select total_household, govtbuild_damage + publicbuild_damage ,govtbuild_partdamage+publicbuild_partdamage from Household where district=?1")
-    public Object getDistrictStats(String district);
+    @Query("select total_household, govtbuild_damage + publicbuild_damage ,govtbuild_partdamage+publicbuild_partdamage,district from Household where dist_id=?1")
+    public Object getDistrictStats(int district);
 
 }
