@@ -11,5 +11,6 @@ import java.util.List;
  */
 @Repository
 public interface PartnersRepository extends JpaRepository<Partners,PartnersKey> {
+    public List<Partners> findByDistId (int distId);
 
 }

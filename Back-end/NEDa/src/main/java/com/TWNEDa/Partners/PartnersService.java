@@ -20,6 +20,12 @@ public class PartnersService {
         return partners;
     }
 
+    public List<Partners> getPartnersById(int districtId){
+        List<Partners> partners = new ArrayList<>();
+         partnersRepository.findByDistId(districtId).forEach(partners :: add);
+         return partners;
+    }
+
     public void addData(Partners partner){
         this.partnersRepository.save(partner);
     }

@@ -4,10 +4,7 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(initialize);
 
-function getSelectedOption(){
-    var option = $('form input[checked]');
-    console.log(option);
-}
+
 
 function getData(districtId, cb) {
 

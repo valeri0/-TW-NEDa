@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by Valerio on 4/28/2017.
  */
+@CrossOrigin("http://localhost:63342")
 @RestController
 public class PartnersController {
 
@@ -18,6 +19,11 @@ public class PartnersController {
     @RequestMapping("/partners")
     public List<Partners> getAllPartners(){
         return partnersService.getAllPartners();
+    }
+
+    @RequestMapping("/partners/district/{distId}")
+    public List<Partners> getPartnersByDistrict(@PathVariable int distId){
+        return partnersService.getPartnersById(distId);
     }
 
     @RequestMapping(method = RequestMethod.POST,value="partners")
