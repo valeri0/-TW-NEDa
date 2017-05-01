@@ -16,7 +16,7 @@ public class PopulationService {
 
     public List<Population> getAllPopulation(){
         List<Population> population = new ArrayList<>();
-        populationRepository.findAll().forEach(population :: add);
+        population.addAll(populationRepository.findAll());
         return population;
     }
 
@@ -26,7 +26,7 @@ public class PopulationService {
 
     public List<Population> getDataByZone(String zone){
         List<Population> population = new ArrayList<>();
-        populationRepository.findByZoneIgnoreCase(zone).forEach(population :: add);
+        population.addAll(populationRepository.findByZoneIgnoreCase(zone));
         return population;
     }
 

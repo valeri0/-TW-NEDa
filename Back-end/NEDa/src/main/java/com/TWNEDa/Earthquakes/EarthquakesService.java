@@ -19,7 +19,7 @@ public class EarthquakesService {
     public List<Earthquake> getAllEarthquakes(){
         List<Earthquake> earthquakes = new ArrayList<>();
 
-        earthquakesRepository.findAll().forEach(earthquakes::add);
+        earthquakes.addAll(earthquakesRepository.findAll());
 
         return  earthquakes;
 

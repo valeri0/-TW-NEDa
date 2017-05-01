@@ -3,13 +3,12 @@
  */
 
 var map;
-var kmlLayer;
 var layer1;
 var layer2;
 var infoWindow;
-var marker;
-var marker2;
-var src = 'http://students.info.uaic.ro/~eduard.tuduri/nepal_earthquakes.kml';
+var earthquake_marker;
+var aftershock_marker;
+var markers = [];
 
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
@@ -40,6 +39,113 @@ function toEarthquakeLayer(){
     layer2.setMap(null);
 }
 
+function setMarkers(earthquake, info, url){
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            error: function () {
+                alert('Could not access database');
+            },
+            dataType: 'json',
+
+            success: function (json) {
+                $.each(json, function (index, element) {
+                    var marker = new google.maps.Marker({
+                        position: {lat: element.latitude, lng: element.longitude},
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                    });
+
+                    markers.push(marker);
+
+                    marker.addListener('click', function (event) {
+                        var text = '<div id="content">'+
+                            '<div id="siteNotice">'+
+                            '</div>'+
+                            '<div id="bodyContent">'+
+                            '<h1 id="firstHeading" class="firstHeading">' + element.name + '</h1>'+
+                            '<h3 id="secondHeading">' + event.latLng + '</h3>' +
+                            '<h3 id="thirdHeading">Distance: ' + distanceInKmBetweenEarthCoordinates(earthquake.getPosition().lat(), earthquake.getPosition().lng(), event.latLng.lat(), event.latLng.lng()) + ' km</h3>' +
+                            '<p>' + element.description + '</p>'+
+                            '<h4>Risk: ' + element.risk + '</h4>' +
+                            '</div>' +
+                            '</div>';
+
+                        info.setContent(text);
+                        info.setPosition(event.latLng);
+                        info.open(map);
+                    });
+                })
+            }
+        });
+    });
+}
+
+function deleteAllMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+}
+
+function listenRiskForm(earthquake, info){
+    $('#riskForm').find('input').on('change', function (event) {
+        deleteAllMarkers();
+
+        var otherForm = $("#descriptionForm").find("input[type='radio']:checked");
+
+        if(otherForm.length){
+
+            if(otherForm.val() === 'noDescription'){
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/' + event.target.value + '/' + otherForm.val());
+            }else{
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/' + event.target.value + '/description');
+            }
+        }else{
+            setMarkers(earthquake, info, 'http://localhost:8081/damages/' + event.target.value);
+        }
+    });
+}
+
+function listenDescriptionForm(earthquake, info){
+    $('#descriptionForm').find('input').on('change', function (event) {
+        deleteAllMarkers();
+
+        var otherForm = $("#riskForm").find("input[type='radio']:checked");
+
+        if(otherForm.length){
+            if(event.target.value === 'noDescription'){
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/' + otherForm.val() + '/noDescription');
+            }else{
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/' + otherForm.val() + '/description');
+            }
+        }else{
+            if(event.target.value === 'noDescription'){
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/description/noDescription');
+            }else{
+                setMarkers(earthquake, info, 'http://localhost:8081/damages/description');
+            }
+        }
+
+    });
+}
+
+function search(){
+    deleteAllMarkers();
+
+    var name = $('#searchBar');
+
+    setMarkers(earthquake_marker, infoWindow, 'http://localhost:8081/damages/name/' + name.val());
+
+}
+
+function clearFilters() {
+    deleteAllMarkers();
+    $('#riskForm').find('input').prop('checked', false);
+    $('#descriptionForm').find('input').prop('checked', false);
+    setMarkers(earthquake_marker, infoWindow, 'http://localhost:8081/damages');
+}
+
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -63,14 +169,14 @@ function initMap() {
         strokeWeight: 1.3
     });
 
-    marker = new google.maps.Marker({
+    earthquake_marker = new google.maps.Marker({
         map: map,
         position: {lat: 28.147, lng: 84.708}
     });
 
     infoWindow = new google.maps.InfoWindow();
 
-    marker.addListener('click', function (event) {
+    earthquake_marker.addListener('click', function (event) {
         var text = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
@@ -89,13 +195,13 @@ function initMap() {
         infoWindow.open(map);
     });
 
-    marker2 = new google.maps.Marker({
+    aftershock_marker = new google.maps.Marker({
         map: map,
         position: {lat: 27.809, lng: 86.066},
         icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png'
     });
 
-    marker2.addListener('click', function (event) {
+    aftershock_marker.addListener('click', function (event) {
         var text = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
@@ -114,29 +220,9 @@ function initMap() {
         infoWindow.open(map);
     });
 
-    kmlLayer = new google.maps.KmlLayer(src, {
-        preserveViewport: false,
-        suppressInfoWindows: true,
-        url: src,
-        map: map
-    });
 
-    kmlLayer.addListener('click', function (kmlEvent) {
-        var text = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<div id="bodyContent">'+
-            '<h1 id="firstHeading" class="firstHeading">' + kmlEvent.featureData.name + '</h1>'+
-            '<h3 id="secondHeading">' + kmlEvent.latLng + '</h3>' +
-            '<h3 id="thirdHeading">Distance: ' + distanceInKmBetweenEarthCoordinates(marker.getPosition().lat(), marker.getPosition().lng(), kmlEvent.latLng.lat(), kmlEvent.latLng.lng()) + ' km</h3>' +
-            '<p>' + kmlEvent.featureData.description + '</p>'+
-            '<h4>Risk: ' + kmlEvent.featureData.snippet + '</h4>' +
-            '</div>' +
-            '</div>';
-
-        infoWindow.setContent(text);
-        infoWindow.setPosition(kmlEvent.latLng);
-        infoWindow.open(map);
-    });
+    setMarkers(earthquake_marker, infoWindow, 'http://localhost:8081/damages');
+    listenRiskForm(earthquake_marker, infoWindow);
+    listenDescriptionForm(earthquake_marker, infoWindow);
 }
 

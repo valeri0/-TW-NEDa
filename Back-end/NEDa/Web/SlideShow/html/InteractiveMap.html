@@ -34,7 +34,7 @@
                 <h3>Filters</h3>
             </li>
             <li>
-                <input type="text" name="search" placeholder="Search..">
+                <input id="searchBar" type="search" name="search" placeholder="Search.." onsearch="search();">
             </li>
             <li>
                 <div class="radio-filter">
@@ -59,13 +59,16 @@
 
                     <form id="descriptionForm">
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Has description</label>
+                            <label><input type="radio" name="optradio" value="hasDescription">Has description</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">No description</label>
+                            <label><input type="radio" name="optradio" value="noDescription">No description</label>
                         </div>
                     </form>
                 </div>
+            </li>
+            <li>
+                <button class="btn btn-default" onclick="clearFilters();">Clear filters</button>
             </li>
         </ul>
     </div>
