@@ -1,8 +1,8 @@
 package com.TWNEDa.Partners;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,4 +19,15 @@ public class PartnersController {
     public List<Partners> getAllPartners(){
         return partnersService.getAllPartners();
     }
+
+    @RequestMapping(method = RequestMethod.POST,value="partners")
+    public void addData(@RequestBody Partners partner){
+        partnersService.addData(partner);
+    }
+
+    @RequestMapping(method=RequestMethod.DELETE, value="partners")
+    public void  deleteTopic(@Param(value = "partnerKey")PartnersKey partnerKey){
+        partnersService.deleteData(partnerKey);
+    }
+
   }

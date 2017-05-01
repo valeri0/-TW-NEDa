@@ -19,4 +19,13 @@ public class PartnersService {
         partners.addAll(partnersRepository.findAll());
         return partners;
     }
+
+    public void addData(Partners partner){
+        this.partnersRepository.save(partner);
+    }
+
+    public void deleteData(PartnersKey partnersKey){
+        partnersRepository.delete(partnersKey);
+    }
+
 }

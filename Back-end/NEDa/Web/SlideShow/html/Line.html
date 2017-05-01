@@ -30,44 +30,35 @@
                 <h3>Filters</h3>
             </li>
             <li>
-                <input type="text" name="search" placeholder="Search..">
-            </li>
-            <li>
                 <div class="radio-filter">
-                    <a href="#">Number of victims :</a>
+                    <a href="#">Fatalities :</a>
 
-                    <form>
+                    <form class="fatalities-filter">
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Under 1000</label>
+                            <label><input type="radio" name="optradio" checked="" value=" under1000">Under 1000</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">1000 - 5000</label>
+                            <label><input type="radio" name="optradio" value="between1000&4000 ">1000 - 4000</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">5000 - 10000</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 10000</label>
+                            <label><input type="radio" name="optradio" value="over4000">Over 4000</label>
                         </div>
                     </form>
                 </div>
             </li>
             <li>
                 <div class="radio-filter">
-                    <a href="#">Expenses :</a>
+                    <a href="#">Century :</a>
 
-                    <form>
+                    <form class="century-filter">
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Under 10000$</label>
+                            <label><input type="radio" name="optradio" checked="" value="before17">Before 17th century</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">10000$ - 50000$</label>
+                            <label><input type="radio" name="optradio" value="between17&19">Between 17th and 19th century</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">50000$ - 100000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 100000$</label>
+                            <label><input type="radio" name="optradio" value="after19">After 19th century</label>
                         </div>
                     </form>
                 </div>
@@ -76,32 +67,21 @@
                 <div class="radio-filter">
                     <a href="#">Richter scale :</a>
 
-                    <form>
+                    <form class="richter-filter">
+
                         <div class="radio">
-                            <label><input type="radio" name="optradio">Under 3</label>
+                            <label><input type="radio" name="optradio" checked="" value="under7">Under 7</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">3 - 5</label>
+                            <label><input type="radio" name="optradio" value="between7&8">7 - 8</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio">5 - 8</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 8</label>
+                            <label><input type="radio" name="optradio" value="over8">Over 8</label>
                         </div>
                     </form>
                 </div>
             </li>
-            <li>
-                <a href="#">Year :</a>
-                <div class="input-group spinner">
-                    <input type="text" class="form-control" value="2017">
-                    <div class="input-group-btn-vertical">
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-up"></span></button>
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-down"></span></button>
-                    </div>
-                </div>
-            </li>
+
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->

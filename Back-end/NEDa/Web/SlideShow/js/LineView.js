@@ -4,26 +4,39 @@
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
+function getSelectedOption(){
+    var option = $('form input[checked]');
+    console.log(option.length);
+}
+
+function initialize(){
+
+    addEventHandlers();
+
+    drawChart();
+}
+
+
 function drawChart() {
 
+
+
     var data = new google.visualization.DataTable();
+
     data.addColumn('date', 'Date of earthquake');
     data.addColumn('number', 'Magnitude');
+    data.addColumn('number','Deaths');
 
     var export_png = document.getElementById("export_png");
 
     data.addRows([
 
-        [new Date(2000, 8, 25), 3.6],
-        [new Date(2002, 12, 3), 4.1],
-        [new Date(2005, 2, 10), 2.9],
-        [new Date(2007, 9, 5), 4.3],
-        [new Date(2008, 3, 15), 4.6],
-        [new Date(2010, 8, 15), 2.5],
-        [new Date(2011, 3, 5), 1.2],
-        [new Date(2012, 7, 21), 3.5],
-        [new Date(2015, 8, 5), 6.3],
-        [new Date(2016, 9, 10), 5]
+        [new Date(2000, 8, 25), 3.6,5],
+        [new Date(2002, 12, 3), 4.1,8],
+        [new Date(2005, 2, 10), 2.9,10],
+        [new Date(2007, 9, 5), 4.3,5],
+        [new Date(2008, 3, 15), 4.6,100],
+        [new Date(2010, 8, 15), 2.5,1000]
 
     ]);
 
@@ -51,6 +64,18 @@ function drawChart() {
     chart.draw(data, options);
 }
 
+function addEventHandlers () {
+    $('form.fatalities-filter input').on('change', function(event) {
+        console.log(event.target.value);
+    })
+    $('form.century-filter input').on('change', function(event) {
+        console.log(event.target.value);
+    })
+    $('form.richter-filter input').on('change', function(event) {
+        console.log(event.target.value);
+    })
+}
+
 $(window).resize(function(){
-	drawChart();
+	initialize();
 });

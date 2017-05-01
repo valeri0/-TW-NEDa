@@ -1,9 +1,11 @@
 package com.TWNEDa.Earthquakes;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,12 +16,6 @@ public class EarthquakesController {
 
     @Autowired
     EarthquakesService earthquakesService;
-
-    @RequestMapping("earthquakes")
-    public List<Earthquake> getAllEarthquakes(){
-        return earthquakesService.getAllEarthquakes();
-    }
-
 
 
 }
