@@ -4,21 +4,34 @@
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
-function getSelectedOption(){
-    var option = $('form input[checked]');
-    console.log(option.length);
-}
+var parameters = [0,99999999999,0,10000000];
 
 function initialize(){
 
     addEventHandlers();
 
+    getData(parameters[0],parameters[1],parameters[2],parameters[3]);
+
     drawChart();
+}
+
+function getData(min_fatalities,max_fatalities,min_magnitude,max_magnitude,cb){
+
+    var getRequest = new XMLHttpRequest();
+
+    getRequest.open('GET','http://localhost:8081/earthquakes/search?minFatalities=${min_fatalities}&maxFatalities=${max_fatalities}&minMagnitude=${min_magnitude}&max_magnitude=${maxMagnitude}')
+
+    getRequest.onload = function(){
+        var object = JSON.parse(getRequest.responseText);
+        console.log(object);
+        cb(object);
+    };
+    
+    getRequest.send();
 }
 
 
 function drawChart() {
-
 
 
     var data = new google.visualization.DataTable();
@@ -65,15 +78,34 @@ function drawChart() {
 }
 
 function addEventHandlers () {
-    $('form.fatalities-filter input').on('change', function(event) {
-        console.log(event.target.value);
-    })
-    $('form.century-filter input').on('change', function(event) {
-        console.log(event.target.value);
-    })
-    $('form.richter-filter input').on('change', function(event) {
-        console.log(event.target.value);
-    })
+
+
+
+        $('form.fatalities-filter input').on('change', function(event) {
+            var value = event.target.value;
+            var firstParam = value.substr(0,value.indexOf('&'));
+            var secondParam = value.substr(value.indexOf('&')+1,value.length);
+
+            parameters[0]=firstParam;
+            parameters[1]=secondParam;
+
+            console.log(parameters);
+
+        });
+
+        $('form.richter-filter input').on('change', function(event) {
+
+            var value = event.target.value;
+            var firstParam = value.substr(0,value.indexOf('&'));
+            var secondParam = value.substr(value.indexOf('&')+1,value.length);
+
+            parameters[2]=firstParam;
+            parameters[3]=secondParam;
+
+
+
+        });
+
 }
 
 $(window).resize(function(){

@@ -14,7 +14,7 @@ import java.util.Date;
 public class Earthquake {
 
     @Id
-    private int id;
+    private Integer id;
 
     @Column(name="earthquake_date")
     private Date earthquakeDate;
@@ -25,13 +25,13 @@ public class Earthquake {
 
     private Double longitude;
 
-    private int fatalities;
+    private Integer fatalities;
 
     private Double magnitude;
 
     public Earthquake(){}
 
-    public Earthquake(int id, Date earthquakeDate, String place, Double latitude, Double longitude, int fatalities, Double magnitude) {
+    public Earthquake(Integer id, Date earthquakeDate, String place, Double latitude, Double longitude, Integer fatalities, Double magnitude) {
         this.id = id;
         this.earthquakeDate = earthquakeDate;
         this.place = place;
@@ -41,7 +41,7 @@ public class Earthquake {
         this.magnitude = magnitude;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -61,7 +61,7 @@ public class Earthquake {
         return longitude;
     }
 
-    public int getFatalities() {
+    public Integer getFatalities() {
         return fatalities;
     }
 

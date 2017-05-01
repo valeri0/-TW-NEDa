@@ -25,4 +25,14 @@ public class EarthquakesService {
 
     }
 
+    public Earthquake getEarthquakeById(int id){
+        return earthquakesRepository.findOne(id);
+    }
+
+    public List<Earthquake> getFilteredEarthquakes(Integer minFatalities,Integer maxFatalities,Double minMagnitude,Double maxMagnitude){
+
+
+        return earthquakesRepository.getFilteredEarthquakes(minFatalities,maxFatalities,minMagnitude,maxMagnitude);
+    }
+
 }
