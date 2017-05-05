@@ -21,4 +21,10 @@ public interface PopulationRepository extends JpaRepository<Population,Integer> 
 
     @Query("select tot_deaths,total_injured from Population where lower(district) = lower (?1)")
     Object getDistrictStats(String districtName);
+
+    @Query("select zone, sum(total_population), sum(tot_deaths), sum(total_injured) from Population group by zone")
+    List<Object> getAllStatsByZone();
+
+    @Query("select zone, sum(death_male), sum(injured_male), sum(death_female), sum(injured_female) from Population where UPPER(zone) = UPPER(?1) group by zone")
+    Object getStatsBasedOnGender(String zone);
 }

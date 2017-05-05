@@ -39,6 +39,14 @@ public class PopulationController {
         return populationService.getDistrictStats(districtName);
     }
 
+    @RequestMapping("population/zone")
+    public List<Object> getAllStatsByZone(){
+        return populationService.getAllStatsByZone();
+    }
+
+    @RequestMapping("population/gender/{zone}")
+    public Object getStatsBaseOnGender(@PathVariable String zone){return populationService.getStatsBasedOnGender(zone);}
+
     @RequestMapping(method = RequestMethod.POST, value = "/population")
     public void addData(@RequestBody Population population){
         populationService.addData(population);

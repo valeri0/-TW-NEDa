@@ -25,6 +25,14 @@
 
 }
 
-#tipHtml {
+.tipHtml {
     line-height: 60%;
 }
+.red-cell{
+    fill: #1f3fac !important;
+    stroke-width: 1;
+    stroke: #ac0e08;
+    position: relative;
+    z-index: -1;
+}
+

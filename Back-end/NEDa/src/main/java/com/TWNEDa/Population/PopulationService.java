@@ -35,6 +35,15 @@ public class PopulationService {
         return zones=populationRepository.findDeathsbyZone(zone);
     }
 
+    public List<Object> getAllStatsByZone(){
+        List<Object> zones = new ArrayList<>();
+        return zones = populationRepository.getAllStatsByZone();
+    }
+
+    public Object getStatsBasedOnGender(String zone){
+        return populationRepository.getStatsBasedOnGender(zone);
+    }
+
     public Object getDistrictStats(String districtName){
         return populationRepository.getDistrictStats(districtName);
     }
