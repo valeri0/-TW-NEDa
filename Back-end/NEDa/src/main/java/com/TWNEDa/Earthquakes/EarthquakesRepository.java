@@ -14,6 +14,6 @@ public interface EarthquakesRepository extends JpaRepository<Earthquake,Integer>
 
 
     @Query("SELECT e from Earthquake e where (e.fatalities between ?1 and ?2) and (e.magnitude between ?3 and ?4)")
-    public List<Earthquake> getFilteredEarthquakes(Integer minFatalities,Integer maxFatalities,Double minMagnitude,Double maxMagnitude);
+    public List<Earthquake> getFilteredEarthquakes(Long minFatalities,Long maxFatalities,Double minMagnitude,Double maxMagnitude);
 
 }

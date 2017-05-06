@@ -46,25 +46,6 @@
                     </form>
                 </div>
             </li>
-            <!--
-            <li>
-                <div class="radio-filter">
-                    <a href="#">Century :</a>
-
-                    <form class="century-filter">
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" checked="" value="before17">Before 17th century</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" value="between17&19">Between 17th and 19th century</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" value="after19">After 19th century</label>
-                        </div>
-                    </form>
-                </div>
-            </li>
-            -->
 
             <li>
                 <div class="radio-filter">
@@ -130,15 +111,34 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
-                    <div id="line_div" style="width: 100%; min_height: 450px; height: 500px"></div>
-					<div class="col-lg-offset-3 ">
-						<div id="export_png"> </div>
-					</div>
-                </div>
 
+                <div class="col-md-6 col-xs-12">
+                    <div id="chart_magnitude" style="width: 100%; min-height: 450px; height: 600px"></div>
+
+                    <div class="col-md-offset-3">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="export_magnitude_png"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div id="chart_deaths" style="width: 100%; min-height: 450px; height: 600px"></div>
+
+                    <div class="col-md-offset-3">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="export_deaths_png"> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
     </div>
     <!-- /#page-content-wrapper -->
 
