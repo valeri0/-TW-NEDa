@@ -25,13 +25,13 @@ public class Earthquake {
 
     private Double longitude;
 
-    private Integer fatalities;
+    private Long fatalities;
 
     private Double magnitude;
 
     public Earthquake(){}
 
-    public Earthquake(Integer id, Date earthquakeDate, String place, Double latitude, Double longitude, Integer fatalities, Double magnitude) {
+    public Earthquake(Integer id, Date earthquakeDate, String place, Double latitude, Double longitude, Long fatalities, Double magnitude) {
         this.id = id;
         this.earthquakeDate = earthquakeDate;
         this.place = place;
@@ -61,7 +61,7 @@ public class Earthquake {
         return longitude;
     }
 
-    public Integer getFatalities() {
+    public Long getFatalities() {
         return fatalities;
     }
 

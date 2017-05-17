@@ -29,8 +29,8 @@ public class EarthquakesController {
 
     @RequestMapping(value="earthquakes/search",method = RequestMethod.GET)
     @ApiMethod(description = "Get the earthquake that fits the filter (minFatalities, maxFatalities, minMagnitude, maxMagnitude) passed in the query string")
-    public List<Earthquake> getFilteredEarthquakes(@Param(value="minFatalities") Integer minFatalities,
-                                                   @Param(value="maxFatalities") Integer maxFatalities,
+    public List<Earthquake> getFilteredEarthquakes(@Param(value="minFatalities") Long minFatalities,
+                                                   @Param(value="maxFatalities") Long maxFatalities,
                                                    @Param(value = "minMagnitude") Double minMagnitude,
                                                    @Param(value="maxMagnitude") Double maxMagnitude){
 

@@ -29,7 +29,7 @@ public class EarthquakesService {
         return earthquakesRepository.findOne(id);
     }
 
-    public List<Earthquake> getFilteredEarthquakes(Integer minFatalities,Integer maxFatalities,Double minMagnitude,Double maxMagnitude){
+    public List<Earthquake> getFilteredEarthquakes(Long minFatalities,Long maxFatalities,Double minMagnitude,Double maxMagnitude){
 
 
         return earthquakesRepository.getFilteredEarthquakes(minFatalities,maxFatalities,minMagnitude,maxMagnitude);
