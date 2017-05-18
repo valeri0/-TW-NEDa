@@ -16,7 +16,6 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="../js/MapChart.js"></script>
-    <script src="../js/Tabel&Donuts.js"></script>
 
 </head>
 
@@ -181,10 +180,10 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
 
                         <!-- Map -->
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  style="height:500px; width:850px; padding: 10px;" viewBox="100 0 1000 700" >
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  style="height:300px; width:750px; padding: 10px;" viewBox="100 0 1000 500" >
 
                             <defs>
 
@@ -218,13 +217,30 @@
 
                 </div>
 
-                <div class="col-md-3">
-                    <div id="donut_dead" style="width: 450px; height: 300px; position: relative; right: 70px; top: 25px;"></div>
-                </div>
-                <div class="col-md-3">
-                    <div id="donut_injured" style="width: 450px; height: 300px;position: relative; right: 70px; top: 25px;"></div>
+                <div class="col-md-3 col-xs-12 col-sm-6 col-lg-3">
+                    <div id="donut_dead"></div>
+                    <div class="col-md-offset-4 col-xs-offset-4 col-sm-offset-4">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="export_png"> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+
+                <div class="col-md-3 col-xs-12 col-sm-6 col-lg-3">
+                    <div id="donut_injured"></div>
+                    <div class="col-md-offset-4 col-xs-offset-4 col-sm-offset-4">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="export1_png"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="row">

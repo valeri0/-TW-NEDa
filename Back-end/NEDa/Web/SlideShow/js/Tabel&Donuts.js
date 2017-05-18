@@ -10,7 +10,6 @@ function getData(zoneName, cb) {
     getRequest.open('GET', `http://localhost:8081/population/zone/${zoneName}`)
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        console.log(object);
         cb(object);
     }
     getRequest.send();
@@ -20,7 +19,6 @@ function getDataDonut(zoneName, cb){
     getRequest.open('GET', `http://localhost:8081/population/gender/${zoneName}`)
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        console.log(object);
         cb(object);
     }
     getRequest.send();
@@ -34,7 +32,7 @@ function initialize(){
 
     getDataDonut(zoneName, initDataDead);
 
-    getDataDonut(zoneName, initDataInjured);
+
 
     function initData(zoneInfo){
         var data = new google.visualization.DataTable();
@@ -44,7 +42,6 @@ function initialize(){
         data.addColumn('number', 'Total number of deaths');
         data.addColumn('number', 'Total number of injured');
         zoneInfo.forEach(function(zone){
-            console.log([zone.zone, zone.district, zone.total_population, zone.tot_deaths, zone.total_injured]);
             data.addRow([zone.zone, zone.district, zone.total_population, zone.tot_deaths, zone.total_injured]);
         })
 
@@ -54,28 +51,29 @@ function initialize(){
     }
 
     function initDataDead(stats){
+        console.log(stats);
         var data = google.visualization.arrayToDataTable([
             ['Gender', 'Number of deaths'],
             ['Female', stats[1]],
             ['Male', stats[3]]
         ]);
 
-        drawChartDead(data, stats[0]);
-
-    }
-
-    function initDataInjured(stats){
-        var data = google.visualization.arrayToDataTable([
+        console.log(stats);
+        var data2 = google.visualization.arrayToDataTable([
             ['Gender', 'Number of deaths'],
             ['Female', stats[2]],
             ['Male', stats[3]]
         ]);
 
-        drawChartInjured(data, stats[0]);
+        drawChartInjured(data2, stats[0]);
+
+        drawChartDead(data, stats[0]);
 
     }
 
-    function drawChartDead(data){
+
+
+    function drawChartDead(data, zoneName){
         var options = {
             title: 'Number of deaths - '+ zoneName,
             pieHole: 0.5,
@@ -85,7 +83,7 @@ function initialize(){
                 color: 'black',
             },
             legend: 'none',
-            slices:[{color:'#bd0900'},{color:'#9dc10f'}]
+            slices:[{color:'#BD2D67'},{color:'#3DA8BD'}]
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donut_dead'));
@@ -102,7 +100,7 @@ function initialize(){
                 color: 'black',
             },
             legend: 'none',
-            slices:[{color:'#bd0900'},{color:'#9dc10f'}]
+            slices:[{color:'#BD2D67'},{color:'#3DA8BD'}]
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donut_injured'));

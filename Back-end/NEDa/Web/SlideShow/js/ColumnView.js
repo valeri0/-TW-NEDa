@@ -22,7 +22,6 @@ function getDataHouseholds(districtId, cb){
     getRequest.open('GET', `http://localhost:8081/district/household/stats/${districtId}`)
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        console.log(object);
         cb(object);
     }
     getRequest.send();
@@ -44,14 +43,17 @@ function initialize() {
         var data = new google.visualization.DataTable();
 
         data.addColumn('string','Stats');
-        data.addColumn('number', 'Total number of population');
         data.addColumn('number', 'Death');
         data.addColumn('number', 'Injured');
         data.addRows([
-            ['Information', populationData.total_population, populationData.tot_deaths, populationData.total_injured]
+            ['Information', populationData.tot_deaths, populationData.total_injured]
         ]);
 
         drawChart(data, populationData.district);
+
+        $(window).resize(function(){
+            drawChart(data, populationData.district);
+        });
     }
 
 
@@ -67,12 +69,16 @@ function initialize() {
         ]);
 
         drawChartHouseholds(data, houseHolds[3]);
+
+        $(window).resize(function(){
+            drawChartHouseholds(data, houseHolds[3]);
+        });
     }
 
     function drawChart(data, name){
 
         var options = {
-            colors:['#16C77B','#70C716','#9F1311','#6533ED','#D3CB1E'],
+            colors:['#273746','#A8A326'],
             animation:{"startup": true, duration: 1300, easing: 'out'},
             title:'District ' + name,
             subtitle:'subtitle',
@@ -104,7 +110,7 @@ function initialize() {
     function drawChartHouseholds(data, name){
 
         var options = {
-            colors:['#16C77B','#70C716','#9F1311','#6533ED','#D3CB1E'],
+            colors:['#16A75C','#273746','#A8A326'],
             animation:{"startup": true, duration: 1300, easing: 'out'},
             title:'District ' + name,
             subtitle:'subtitle',
@@ -137,13 +143,9 @@ function initialize() {
 
     function addEventHandlers () {
         $('form.district-options input').on('change', function(event) {
-            // console.log(event)
             getData(event.target.value, initData);
             getDataHouseholds(event.target.value, initHouseholds);
         })
     }
 }
 
-$(window).resize(function(){
-	initialize();
-});

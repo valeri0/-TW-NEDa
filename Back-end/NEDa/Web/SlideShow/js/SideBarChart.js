@@ -10,7 +10,6 @@ function getDataPartners(districtId, cb) {
     getRequest.open('GET', `http://localhost:8081//partners/district/${districtId}`)
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        console.log(object);
         cb(object);
     }
     getRequest.send();
@@ -25,36 +24,41 @@ function initialize(){
 
     function initDataPartners(partners){
         console.log(partners);
-        var data = new google.visualization.DataTable({
-            cols : [
-                {
-                    id : 'status',
-                    label : 'Status',
-                    type : 'string',
-                },
-                {
-                    id : 'completed',
-                    label : 'Completed',
-                    type : 'number',
-                },
-                {
-                    id : 'ongoing',
-                    label : 'Ongoing',
-                    type : 'number',
-                },
-                {
-                    id : 'planned',
-                    label : 'Planned',
-                    type : 'number',
-                }
-            ]
-        });
-        partners.forEach(function(partner){
-            console.log([partner.partnersKey.partner, partner.completed, partner.ongoing, partner.planned]);
-            data.addRow([partner.partnersKey.partner, partner.completed, partner.ongoing, partner.planned]);
-        })
+        if(partners.length != 0) {
+            var data = new google.visualization.DataTable({
+                cols: [
+                    {
+                        id: 'status',
+                        label: 'Status',
+                        type: 'string',
+                    },
+                    {
+                        id: 'completed',
+                        label: 'Completed',
+                        type: 'number',
+                    },
+                    {
+                        id: 'ongoing',
+                        label: 'Ongoing',
+                        type: 'number',
+                    },
+                    {
+                        id: 'planned',
+                        label: 'Planned',
+                        type: 'number',
+                    }
+                ]
+            });
+            partners.forEach(function (partner) {
+                data.addRow([partner.partnersKey.partner, partner.completed, partner.ongoing, partner.planned]);
+            })
 
-        drawChartPartners(data,partners[1].partnersKey.district);
+            drawChartPartners(data, partners[1].partnersKey.district);
+        }
+        else{
+                $('#chart_div').empty();
+                $('#export_sbc').empty();
+        }
     }
 
     function drawChartPartners(data,name){
@@ -66,7 +70,7 @@ function initialize(){
             bar: {groupWidth: "70%"},
             legend: {position: 'top', maxLines: 3},
             hAxis: {minValue: 0},
-            colors: ['#179E3F', '#D9B318', '#CA1A0F'],
+            colors: ['#16A75C', '#A8A326', '#A03438'],
             animation:{
                 duration: 1000,
                 easing: 'in',
