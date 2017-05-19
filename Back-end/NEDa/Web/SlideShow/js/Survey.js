@@ -7,6 +7,8 @@ google.charts.setOnLoadCallback(initialize);
 
 function initialize(){
 
+    addEventHandlers();
+
     var districtId = 23;
 
     getDataProblemAdressed(districtId, initDataProblemAdressed);
@@ -201,33 +203,13 @@ function initDataNGO(survey){
     });
 }
 
-
-/*
-google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Answers', { role: 'annotation' },],
-        ['', 8175000, '1 Not at all'],
-        ['', 3792000, '2 Very little'],
-        ['', 2695000, '3 Neutral'],
-        ['', 2099000, '4 Mostly yes'],
-        ['', 1526000, '5 Completely yes'],
-        ['', 1526000, "6 Don't know"],
-        ['', 1526000, '7 Refused']
-    ]);
-
-    var options = {
-        legend:{
-            position: 'none'
-        },
-        chartArea: {width: '70%', height: '100%'}
-    };
-
-    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-    chart.draw(data, options);
+function addEventHandlers () {
+    $('form.district-options input').on('change', function(event) {
+        console.log(event.target.value);
+        getDataProblemAdressed(event.target.value, initDataProblemAdressed);
+        getDataSupportProvided(event.target.value, initDataSupportProvided);
+        getDataBiggestProblem(event.target.value, initDataBiggestProblem);
+        getDataNGO(event.target.value, initDataNGO);
+    })
 }
- */
+
