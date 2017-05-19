@@ -30,9 +30,7 @@
             <li class="sidebar-brand">
                 <h3>Filters</h3>
             </li>
-            <li>
-                <input type="text" name="search" placeholder="Search..">
-            </li>
+
             <li>
                 <div class="radio-filter">
                     <a href="#">Choose Zone :</a>
@@ -86,56 +84,7 @@
                     </form>
                 </div>
             </li>
-            <li>
-                <div class="radio-filter">
-                    <a href="#">Expenses :</a>
 
-                    <form>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Under 10000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">10000$ - 50000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">50000$ - 100000$</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 100000$</label>
-                        </div>
-                    </form>
-                </div>
-            </li>
-            <li>
-                <div class="radio-filter">
-                    <a href="#">Richter scale :</a>
-
-                    <form>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Under 3</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">3 - 5</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">5 - 8</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Over 8</label>
-                        </div>
-                    </form>
-                </div>
-            </li>
-            <li>
-                <a href="#">Year :</a>
-                <div class="input-group spinner">
-                    <input type="text" class="form-control" value="2017">
-                    <div class="input-group-btn-vertical">
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-up"></span></button>
-                        <button class="btn btn-default" type="button"><span class="fa fa-caret-down"></span></button>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -165,6 +114,7 @@
                     <li class="active"><a href="#">Map Chart</a></li>
                     <li><a href="InteractiveMap.html">Interactive Map</a></li>
                     <li><a href="ColumnView.html">Column View</a></li>
+                    <li><a href="Survey.html">Survey</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav pull-right-sm">
@@ -263,17 +213,7 @@
     });
 </script>
 
-<!-- SPINNER SCRIPT -->
-<script>
-    (function ($) {
-        $('.spinner .btn:first-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-        });
-        $('.spinner .btn:last-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-        });
-    })(jQuery);
-</script>
+
 
 </body>
 </html>

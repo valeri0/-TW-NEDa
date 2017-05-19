@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEDa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/Survey.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../js/Survey.js"></script>
+
+</head>
+
+
+<body>
+
+<div id="wrapper" class="row">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h3>Filters</h3>
+            </li>
+            <li>
+                <input type="text" name="search" placeholder="Search..">
+            </li>
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Choose Zone :</a>
+
+                    <form class="zone-options">
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Dhawalagiri" >Dhawalagiri</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Lumbini" >Lumbini</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Mechi" >Mechi</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Karnali" >Karnali</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Koshi" >Koshi</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Mahakali" >Mahakali</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Gandaki" >Gandaki</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Sagarmatha" >Sagarmatha</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Bagmati" >Bagmati</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Narayani" >Narayani</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Seti" >Seti</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Janakpur" >Janakpur</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Bheri" >Bheri</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Sagarmatha" >Sagarmatha</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="Rapti" >Rapti</label>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Expenses :</a>
+
+                    <form>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Under 10000$</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">10000$ - 50000$</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">50000$ - 100000$</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Over 100000$</label>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Richter scale :</a>
+
+                    <form>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Under 3</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">3 - 5</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">5 - 8</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Over 8</label>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <a href="#">Year :</a>
+                <div class="input-group spinner">
+                    <input type="text" class="form-control" value="2017">
+                    <div class="input-group-btn-vertical">
+                        <button class="btn btn-default" type="button"><span class="fa fa-caret-up"></span></button>
+                        <button class="btn btn-default" type="button"><span class="fa fa-caret-down"></span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Button for controlling the sidebar -->
+                <a id="menu-toggle" href="#" class="navbar-brand">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </a>
+
+            </div>
+
+            <!--Menu Items-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="Line.html">Linear View</a></li>
+                    <li><a href="MapChart.html">Map Chart</a></li>
+                    <li><a href="InteractiveMap.html">Interactive Map</a></li>
+                    <li><a href="ColumnView.html">Column View</a></li>
+                    <li class="active"><a href="#">Survey</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav pull-right-sm">
+                    <li><a href="SlideShow.html">Back to homepage</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-center text-edit">Are your main problems being adressed?</p>
+                    <div id="chartProblemAdressed"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+                            <div class="btn-group" role="group">
+                                <div id="exportProblemAdressed"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-center text-edit">Is support provided in a fair way?</p>
+                    <div id="chartSupportProvided"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="exportSupportProvided"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-center text-edit">What is your biggest problem?</p>
+                    <div id="chartBiggestProblem"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+                            <div class="btn-group" role="group">
+                                <div id="exportBiggestProblem"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-center text-edit">Are you satisfied with what NGOs are doing for you after the earthquake?</p>
+                    <div id="chartNGO"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="exportNGO"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+    </div>
+
+<!-- MENU TOGGLE SCRIPT -->
+
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+<!-- SPINNER SCRIPT -->
+<script>
+    (function ($) {
+        $('.spinner .btn:first-of-type').on('click', function() {
+            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+        });
+        $('.spinner .btn:last-of-type').on('click', function() {
+            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+        });
+    })(jQuery);
+</script>
+
+</body>
+</html>
