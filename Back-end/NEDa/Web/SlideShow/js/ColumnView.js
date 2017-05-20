@@ -83,6 +83,7 @@ function initialize() {
             title:'District ' + name,
             subtitle:'subtitle',
             bars: 'horizontal',
+            bar: {groupWidth: "40%"},
             explorer: {
                 axis: 'horizontal',
                 keepInBounds: true,

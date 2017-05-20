@@ -11,41 +11,43 @@ function initialize(){
 
     var districtId = 23;
 
-    getDataProblemAdressed(districtId, initDataProblemAdressed);
+    getDataProblemAddressed(districtId, initDataProblemAddressed);
     getDataSupportProvided(districtId, initDataSupportProvided);
     getDataBiggestProblem(districtId, initDataBiggestProblem);
     getDataNGO(districtId, initDataNGO);
+    getDataSatisfiedGovernment(districtId, initDataSatisfiedGovernment);
+    getDataRebuild(districtId, initDataRebuild);
 
 }
 
-function getDataProblemAdressed(districtId, cb) {
+function getDataProblemAddressed(districtId, cb) {
 
     var getRequest = new XMLHttpRequest();
-    getRequest.open('GET', `http://localhost:8081/population/district/${districtId}`)
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/problems_addressed`);
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        var survey = [0,6,10,9,13,2,1];
-        cb(survey);
+        cb(object);
     }
     getRequest.send();
 }
 
-function initDataProblemAdressed(survey){
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Answers', { role: 'annotation' },],
-        ['', survey[0], 'Not at all'],
-        ['', survey[1], 'Very little'],
-        ['', survey[2], 'Neutral'],
-        ['', survey[3], 'Mostly yes'],
-        ['', survey[4], 'Completely yes'],
-        ['', survey[5], "Don't know"],
-        ['', survey[6], 'Refused']
-    ]);
+function initDataProblemAddressed(surveys){
+    var data = new google.visualization.DataTable()
+        data.addColumn('string', 'Label');
+        data.addColumn('number', 'Answers');
+        data.addColumn({type:'string', role:'annotation'});
+
+        surveys.forEach(function(survey){
+            data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+        })
+
+
 
     var options = {
         legend:{
             position: 'none'
         },
+        annotations: {alwaysOutside: true},
         chartArea: {width: '70%', height: '80%'}
     };
 
@@ -66,31 +68,29 @@ function initDataProblemAdressed(survey){
 function getDataSupportProvided(districtId, cb) {
 
     var getRequest = new XMLHttpRequest();
-    getRequest.open('GET', `http://localhost:8081/population/district/${districtId}`)
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/support_provided`);
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        var survey = [5,6,10,9,13,2,1];
-        cb(survey);
+        cb(object);
     }
     getRequest.send();
 }
 
-function initDataSupportProvided(survey){
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Answers', { role: 'annotation' },],
-        ['', survey[0], 'Not at all'],
-        ['', survey[1], 'Very little'],
-        ['', survey[2], 'Neutral'],
-        ['', survey[3], 'Mostly yes'],
-        ['', survey[4], 'Completely yes'],
-        ['', survey[5], "Don't know"],
-        ['', survey[6], 'Refused']
-    ]);
+function initDataSupportProvided(surveys){
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Label');
+    data.addColumn('number', 'Answers');
+    data.addColumn({type:'string', role:'annotation'});
+
+    surveys.forEach(function(survey){
+        data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+    })
 
     var options = {
         legend:{
             position: 'none'
         },
+        annotations: {alwaysOutside: true},
         chartArea: {width: '70%', height: '80%'}
     };
 
@@ -110,38 +110,29 @@ function initDataSupportProvided(survey){
 
 function getDataBiggestProblem(districtId, cb){
     var getRequest = new XMLHttpRequest();
-    getRequest.open('GET', `http://localhost:8081/population/district/${districtId}`)
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/biggest_problem`);
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        var survey = [0,6,10,9,13,2,1,0,6,10,9,13,2,1];
-        cb(survey);
+        cb(object);
     }
     getRequest.send();
 }
 
-function initDataBiggestProblem(survey){
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Answers', { role: 'annotation' },],
-        ['', survey[0], 'Clean water'],
-        ['', survey[1], 'Education'],
-        ['', survey[2], 'Financial support'],
-        ['', survey[3], 'Food'],
-        ['', survey[4], 'Healthcare'],
-        ['', survey[5], "Housing inspections"],
-        ['', survey[6], 'Livelihoods'],
-        ['', survey[7], "Long term shelter / housing"],
-        ['', survey[8], "NA"],
-        ['', survey[9], "Others"],
-        ['', survey[10], "Psychosocial counseling"],
-        ['', survey[11], "Seeds and fertilizers"],
-        ['', survey[12], "Short-term shelter (tent / shelterbox)"],
-        ['', survey[13], "Toilets / sanitation"]
-    ]);
+function initDataBiggestProblem(surveys){
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Label');
+    data.addColumn('number', 'Answers');
+    data.addColumn({type:'string', role:'annotation'});
+
+    surveys.forEach(function(survey){
+        data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+    })
 
     var options = {
         legend:{
             position: 'none'
         },
+        annotations: {alwaysOutside: true},
         chartArea: {width: '70%', height: '80%'}
     };
 
@@ -161,31 +152,29 @@ function initDataBiggestProblem(survey){
 
 function getDataNGO(districtId, cb){
     var getRequest = new XMLHttpRequest();
-    getRequest.open('GET', `http://localhost:8081/population/district/${districtId}`)
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/satisfied_ngos`);
     getRequest.onload = function(){
         var object = JSON.parse(getRequest.responseText);
-        var survey = [0,6,10,9,13,2,1];
-        cb(survey);
+        cb(object);
     }
     getRequest.send();
 }
 
-function initDataNGO(survey){
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Answers', { role: 'annotation' },],
-        ['', survey[0], 'Not at all'],
-        ['', survey[1], 'Very little'],
-        ['', survey[2], 'Neutral'],
-        ['', survey[3], 'Mostly yes'],
-        ['', survey[4], 'Completely yes'],
-        ['', survey[5], "Don't know"],
-        ['', survey[6], 'Refused']
-    ]);
+function initDataNGO(surveys){
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Label');
+    data.addColumn('number', 'Answers');
+    data.addColumn({type:'string', role:'annotation'});
+
+    surveys.forEach(function(survey){
+        data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+    })
 
     var options = {
         legend:{
             position: 'none'
         },
+        annotations: {alwaysOutside: true},
         chartArea: {width: '70%', height: '80%'}
     };
 
@@ -203,13 +192,99 @@ function initDataNGO(survey){
     });
 }
 
+function getDataSatisfiedGovernment(districtId, cb){
+    var getRequest = new XMLHttpRequest();
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/satisfied_government`);
+    getRequest.onload = function(){
+        var object = JSON.parse(getRequest.responseText);
+        cb(object);
+    }
+    getRequest.send();
+}
+
+function initDataSatisfiedGovernment(surveys){
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Label');
+    data.addColumn('number', 'Answers');
+    data.addColumn({type:'string', role:'annotation'});
+
+    surveys.forEach(function(survey){
+        data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+    })
+
+    var options = {
+        legend:{
+            position: 'none'
+        },
+        annotations: {alwaysOutside: true},
+        chartArea: {width: '70%', height: '80%'}
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chartGovernment'));
+
+    var export_id = document.getElementById('exportGovernment');
+    google.visualization.events.addListener(chart,'ready',function(){
+        export_id.innerHTML='<a href="' + chart.getImageURI() + '" download="chart"  class="btn btn-primary btn-sm" role="button">Export as PNG</a>';
+    });
+
+    chart.draw(data, options);
+
+    $(window).resize(function(){
+        chart.draw(data, options);
+    });
+}
+
+function getDataRebuild(districtId, cb){
+    var getRequest = new XMLHttpRequest();
+    getRequest.open('GET', `http://localhost:8081/survey/${districtId}/rebuild_damage`);
+    getRequest.onload = function(){
+        var object = JSON.parse(getRequest.responseText);
+        cb(object);
+    }
+    getRequest.send();
+}
+
+function initDataRebuild(surveys){
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Label');
+    data.addColumn('number', 'Answers');
+    data.addColumn({type:'string', role:'annotation'});
+
+    surveys.forEach(function(survey){
+        data.addRow(['', survey.answersCount, survey.answer.replace(/[0-9]/g, "")]);
+    })
+
+    var options = {
+        legend:{
+            position: 'none'
+        },
+        annotations: {alwaysOutside: true},
+        chartArea: {width: '70%', height: '80%'}
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chartRebuild'));
+
+    var export_id = document.getElementById('exportRebuild');
+    google.visualization.events.addListener(chart,'ready',function(){
+        export_id.innerHTML='<a href="' + chart.getImageURI() + '" download="chart"  class="btn btn-primary btn-sm" role="button">Export as PNG</a>';
+    });
+
+    chart.draw(data, options);
+
+    $(window).resize(function(){
+        chart.draw(data, options);
+    });
+}
+
 function addEventHandlers () {
     $('form.district-options input').on('change', function(event) {
         console.log(event.target.value);
-        getDataProblemAdressed(event.target.value, initDataProblemAdressed);
+        getDataProblemAddressed(event.target.value, initDataProblemAddressed);
         getDataSupportProvided(event.target.value, initDataSupportProvided);
         getDataBiggestProblem(event.target.value, initDataBiggestProblem);
         getDataNGO(event.target.value, initDataNGO);
+        getDataSatisfiedGovernment(event.target.value, initDataSatisfiedGovernment);
+        getDataRebuild(event.target.value, initDataRebuild);
     })
 }
 
