@@ -67,6 +67,7 @@ function initialize(){
                 title: 'Magnitude'
             },
             animation:{"startup": true, duration: 1300, easing: 'out'},
+            backgroundColor: '#cee5f7'
         };
 
         var deaths_options = {
@@ -79,6 +80,7 @@ function initialize(){
                 title: 'Deaths'
             },
             animation:{"startup": true, duration: 1300, easing: 'out'},
+            backgroundColor: '#cee5f7'
         };
 
 

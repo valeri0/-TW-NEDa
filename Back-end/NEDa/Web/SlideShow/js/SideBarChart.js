@@ -74,7 +74,8 @@ function initialize(){
             animation:{
                 duration: 1000,
                 easing: 'in',
-            }
+            },
+            backgroundColor: '#cee5f7'
         };
 
 

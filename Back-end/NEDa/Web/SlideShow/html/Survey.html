@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/Survey.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
+    <link rel="stylesheet" href="../css/Background.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -126,7 +127,7 @@
                     <li><a href="MapChart.html">Map Chart</a></li>
                     <li><a href="InteractiveMap.html">Interactive Map</a></li>
                     <li><a href="ColumnView.html">Column View</a></li>
-                    <li class="active"><a href="#">Survey</a></li>
+                    <li class="active-button"><a href="#">Survey</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav pull-right-sm">
@@ -138,15 +139,21 @@
         </div>
     </nav>
 
+    <!-- Header -->
+    <div class="header desktop-screen">
+        <img src = "../img/headerNou.png" class="header_image" />
+    </div>
+
+    <div class="header phone-screen">
+        <img src = "../img/HeaderPhone.png" class="header_image" />
+    </div>
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="header">
-                <img src = "../img/NEDaHeader.png" class="header_image" />
-            </div>
-            <row>
+
+            <div class="row">
                 <h3 class="text-center titleStyle">Find out how the Nepalese people were affected by the earthquake from the results of these surveys:</h3>
-            </row>
+            </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                     <p class="text-edit col-md-offset-2">Are your main problems being addressed?</p>
@@ -237,8 +244,16 @@
                 </div>
             </div>
         </div>
-
+        </div>
     </div>
+    <div class="header desktop-screen">
+        <img src ="../img/footerNou.png" class="header_image" />
+    </div>
+    <div class="header phone-screen">
+        <img src = "../img/FooterPhone.png" class="header_image" />
+    </div>
+</div>
+
 
 <!-- MENU TOGGLE SCRIPT -->
 
@@ -250,17 +265,7 @@
     });
 </script>
 
-<!-- SPINNER SCRIPT -->
-<script>
-    (function ($) {
-        $('.spinner .btn:first-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-        });
-        $('.spinner .btn:last-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-        });
-    })(jQuery);
-</script>
+
 
 </body>
 </html>

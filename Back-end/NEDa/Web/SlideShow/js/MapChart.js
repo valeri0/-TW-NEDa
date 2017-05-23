@@ -91,7 +91,8 @@ function initialize(zoneName){
             width: '100%',
             height: '100%',
             allowHtml: true,
-            cssClassNames: cssClassNames
+            cssClassNames: cssClassNames,
+            backgroundColor: '#cee5f7'
         }
 
         var container = document.getElementById('table_div');
@@ -169,7 +170,8 @@ function initialize(zoneName){
                 color: 'black',
             },
             legend: 'none',
-            slices:[{color:'#BD3B69'},{color:'#48B2BD'}]
+            slices:[{color:'#BD3B69'},{color:'#48B2BD'}],
+            backgroundColor: '#cee5f7'
         };
         var chart = new google.visualization.PieChart(document.getElementById('donut_dead'));
 
@@ -194,7 +196,8 @@ function initialize(zoneName){
                 color: 'black',
             },
             legend: 'none',
-            slices:[{color:'#BD3B69'},{color:'#48B2BD'}]
+            slices:[{color:'#BD3B69'},{color:'#48B2BD'}],
+            backgroundColor: '#cee5f7'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donut_injured'));

@@ -15,7 +15,7 @@
 
 }
 .land:hover{
-    fill: #ac0e08;
+    fill: #db1d3d;
     transform: scale(1.03);
     stroke-width: 1;
     stroke: #ac0e08;
@@ -25,7 +25,7 @@
 
 }
 .land.active{
-    fill: #ac0e08;
+    fill: #db1d3d;
 }
 
 .tipHtml {
