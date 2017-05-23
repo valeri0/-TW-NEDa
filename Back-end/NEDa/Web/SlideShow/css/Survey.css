@@ -1,3 +1,26 @@
 .text-edit{
-    font-style: italic;
+    font-weight: bold;
+    font-size: large;
+    color: #3088c1;
+}
+.titleStyle{
+    margin-bottom: 100px;
+    font-weight: bold;
+
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    border: 1px solid;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_image{
+    height: 100%;
+    width: 100%;
 }

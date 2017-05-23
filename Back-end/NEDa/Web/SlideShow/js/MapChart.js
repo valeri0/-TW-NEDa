@@ -72,7 +72,7 @@ function initialize(zoneName){
 
     function initData(zoneInfo){
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Zone');
+        data.addColumn('string', 'Zone', );
         data.addColumn('string', 'District');
         data.addColumn('number', 'Total population');
         data.addColumn('number', 'Total number of deaths');
@@ -81,9 +81,36 @@ function initialize(zoneName){
             data.addRow([zone.zone, zone.district, zone.total_population, zone.tot_deaths, zone.total_injured]);
         })
 
-        var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        var cssClassNames = {
+            'headerRow': 'textColor'
+        }
+
+        var options ={
+            showRowNumber: true,
+            width: '100%',
+            height: '100%',
+            allowHtml: true,
+            cssClassNames: cssClassNames
+        }
+
+        var container = document.getElementById('table_div');
+
+        var table = new google.visualization.Table(container);
+
+        google.visualization.events.addListener(table, 'ready', function () {
+            container.getElementsByTagName('TR')[0].cells[0].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[0].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[1].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[2].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[3].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[4].style.background = '#c4c4c4';
+            container.getElementsByTagName('TR')[0].cells[5].style.background = '#c4c4c4';
+
+
+        });
+
+        table.draw(data, options);
     }
 
     function initDataDead(stats){

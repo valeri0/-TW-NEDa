@@ -82,10 +82,10 @@ function initialize(){
         };
 
 
-        var first_chart = new google.visualization.LineChart(
+        var first_chart = new google.visualization.AreaChart(
             document.getElementById('chart_magnitude'));
 
-        var second_chart = new google.visualization.LineChart(
+        var second_chart = new google.visualization.AreaChart(
             document.getElementById('chart_deaths'));
 
         google.visualization.events.addListener(first_chart,'ready',function(){
