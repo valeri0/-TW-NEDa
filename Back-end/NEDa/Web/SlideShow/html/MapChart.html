@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/Background.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
     <link rel="stylesheet" href='../css/MapChart.css'>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -125,15 +125,27 @@
 
         </div>
     </nav>
+    <!-- Header -->
 
+    <div class="header desktop-screen">
+        <img src = "../img/headerNou.png" class="header_image" />
+    </div>
+
+    <div class="header phone-screen">
+        <img src = "../img/HeaderPhone.png" class="header_image" />
+    </div>
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
+                <h3 class="text-center titleStyle">
+                    Click on a region to show specific data about the loss of life and injuries.</h3>
+            </div>
+            <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
 
                         <!-- Map -->
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  style="height:300px; width:750px; padding: 10px;" viewBox="100 0 1000 500" >
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"   viewBox="-50 0 1000 500" >
 
                             <defs>
 
@@ -172,7 +184,7 @@
                     <div class="col-md-offset-4 col-xs-offset-4 col-sm-offset-4">
                         <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
 
-                            <div class="btn-group" role="group">
+                            <div class="btn-group" role="group" style="margin-bottom: 50px">
                                 <div id="export_png"> </div>
                             </div>
                         </div>
@@ -185,7 +197,7 @@
                     <div class="col-md-offset-4 col-xs-offset-4 col-sm-offset-4">
                         <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
 
-                            <div class="btn-group" role="group">
+                            <div class="btn-group" role="group" style="margin-bottom: 50px">
                                 <div id="export1_png"> </div>
                             </div>
                         </div>
@@ -199,6 +211,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Footer -->
+    <div class="header desktop-screen">
+        <img src ="../img/footerNou.png" class="header_image" />
+    </div>
+    <div class="header phone-screen">
+        <img src = "../img/FooterPhone.png" class="header_image" />
     </div>
 
 </div>

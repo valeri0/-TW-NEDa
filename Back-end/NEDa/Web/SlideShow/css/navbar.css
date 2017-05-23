@@ -8,6 +8,10 @@
     border-radius: 4px;
 }
 
+.navbar{
+    margin-bottom: 0 !important;
+}
+
 .footer {
     position: absolute;
     right: 0;

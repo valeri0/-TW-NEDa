@@ -47,8 +47,15 @@ function initDataProblemAddressed(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartProblemAdressed'));
@@ -90,8 +97,16 @@ function initDataSupportProvided(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
+
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartSupportProvided'));
@@ -132,8 +147,16 @@ function initDataBiggestProblem(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
+
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartBiggestProblem'));
@@ -174,8 +197,15 @@ function initDataNGO(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartNGO'));
@@ -216,8 +246,16 @@ function initDataSatisfiedGovernment(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
+
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartGovernment'));
@@ -258,8 +296,16 @@ function initDataRebuild(surveys){
         legend:{
             position: 'none'
         },
-        annotations: {alwaysOutside: true},
-        chartArea: {width: '70%', height: '80%'}
+        colors: ['#db1d3d'],
+        chartArea: {width: '70%', height: '80%'},
+        annotations: {
+            alwaysOutside: true,
+            textStyle: {
+                color: '#871b47',
+            }
+        },
+        backgroundColor: '#cee5f7'
+
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chartRebuild'));

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
+    <link rel="stylesheet" href='../css/Survey.css'>
+    <link rel="stylesheet" href='../css/Background.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -129,7 +131,7 @@
                     <li><a href="Line.html">Linear View</a></li>
                     <li ><a href="MapChart.html">Map Chart</a></li>
                     <li><a href="InteractiveMap.html">Interactive Map</a></li>
-                    <li class="active"><a href="#">Column View</a></li>
+                    <li class="active-button"><a href="#">Column View</a></li>
                     <li><a href="Survey.html">Survey</a></li>
 
                 </ul>
@@ -142,9 +144,21 @@
         </div>
     </nav>
 
+    <!-- Header -->
+    <div class="header desktop-screen">
+        <img src = "../img/headerNou.png" class="header_image" />
+    </div>
+
+    <div class="header phone-screen">
+        <img src = "../img/HeaderPhone.png" class="header_image" />
+    </div>
+
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
+            <div class="row">
+                <h3 class="text-center titleStyle">Detailed information about the damage caused in districts. Change the district from the sidebar.</h3>
+            </div>
 
             <div class="row">
 
@@ -194,6 +208,12 @@
             </div>
 
         </div>
+        <div class="header desktop-screen">
+            <img src ="../img/footerNou.png" class="header_image" />
+        </div>
+        <div class="header phone-screen">
+            <img src = "../img/FooterPhone.png" class="header_image" />
+        </div>
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -208,17 +228,7 @@
     });
 </script>
 
-<!-- SPINNER SCRIPT -->
-<script>
-    (function ($) {
-        $('.spinner .btn:first-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-        });
-        $('.spinner .btn:last-of-type').on('click', function() {
-            $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-        });
-    })(jQuery);
-</script>
+
 
 </body>
 </html>

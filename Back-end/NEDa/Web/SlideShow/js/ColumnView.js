@@ -88,7 +88,8 @@ function initialize() {
                 axis: 'horizontal',
                 keepInBounds: true,
                 maxZoomIn: 4.0
-            }
+            },
+            backgroundColor: '#cee5f7'
         };
 
         var export_id = document.getElementById('export_png');
@@ -120,7 +121,8 @@ function initialize() {
                 actions: ['dragToZoom', 'rightClickToReset'],
                 axis: 'vertical',
                 keepInBounds: true,
-                maxZoomIn: 4.0}
+                maxZoomIn: 4.0},
+            backgroundColor: '#cee5f7'
         };
 
         var export_id = document.getElementById('exportHouseholds_png');

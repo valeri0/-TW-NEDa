@@ -67,6 +67,7 @@ function initialize(){
                 title: 'Magnitude'
             },
             animation:{"startup": true, duration: 1300, easing: 'out'},
+            backgroundColor: '#cee5f7'
         };
 
         var deaths_options = {
@@ -79,13 +80,14 @@ function initialize(){
                 title: 'Deaths'
             },
             animation:{"startup": true, duration: 1300, easing: 'out'},
+            backgroundColor: '#cee5f7'
         };
 
 
-        var first_chart = new google.visualization.LineChart(
+        var first_chart = new google.visualization.AreaChart(
             document.getElementById('chart_magnitude'));
 
-        var second_chart = new google.visualization.LineChart(
+        var second_chart = new google.visualization.AreaChart(
             document.getElementById('chart_deaths'));
 
         google.visualization.events.addListener(first_chart,'ready',function(){

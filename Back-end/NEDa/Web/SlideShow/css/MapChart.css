@@ -15,7 +15,7 @@
 
 }
 .land:hover{
-    fill: #ac0e08;
+    fill: #db1d3d;
     transform: scale(1.03);
     stroke-width: 1;
     stroke: #ac0e08;
@@ -25,7 +25,7 @@
 
 }
 .land.active{
-    fill: #ac0e08;
+    fill: #db1d3d;
 }
 
 .tipHtml {
@@ -37,4 +37,15 @@
     stroke: #ac0e08;
     position: relative;
     z-index: -1;
+}
+
+.textColor {
+    color: #fff7ec;
+}
+
+.titleStyle{
+    margin-bottom: 40px;
+    margin-top: -100px;
+    font-weight: bold;
+
 }
