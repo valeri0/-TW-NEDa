@@ -14,6 +14,7 @@ google.charts.setOnLoadCallback(initialize);
 
         getRequest.onload = function(){
             var object = JSON.parse(getRequest.responseText);
+            console.log(object);
             cb(object);
         };
     

@@ -62,6 +62,13 @@
     filter:contrast(80%);
 }
 
+.titleStyle{
+    margin-bottom: 100px;
+    font-weight: bold;
+    color: rgb(0, 71, 115);
+
+}
+
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: rgba(39, 170, 225, 1);
