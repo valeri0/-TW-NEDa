@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by eduar on 01-May-17.
  */
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Damages API", description = "Provides a list of reported damages after the 2015 Nepal Earthquake", stage = ApiStage.BETA)
 public class DamagesController {

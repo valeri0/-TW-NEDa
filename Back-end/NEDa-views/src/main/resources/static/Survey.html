@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEDa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/Survey.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
+    <link rel="stylesheet" href="../css/Background.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../js/Survey.js"></script>
+
+</head>
+
+
+<body>
+
+<div id="wrapper" class="row">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h3>Filter</h3>
+            </li>
+
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Districts :</a>
+
+                    <form class="district-options">
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="23" checked="">Sindhupalchok</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="27">Kathmandu</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="28">Nuwakot</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="30">Dhading</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="29">Rasuwa</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="36">Gorkha</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="26">Bhaktapur</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="24">Kavrepalanchok</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="22">Dolakha</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="21">Ramechhap</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="31">Makwanpur</label>
+                        </div>
+
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="12">Okhaldhunga</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="20">Sindhuli</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="25">Latitpur</label>
+                        </div>
+
+                    </form>
+                </div>
+            </li>
+
+
+
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Button for controlling the sidebar -->
+                <a id="menu-toggle" href="#" class="navbar-brand">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </a>
+
+            </div>
+
+            <!--Menu Items-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="Line.html">Linear View</a></li>
+                    <li><a href="MapChart.html">Map Chart</a></li>
+                    <li><a href="InteractiveMap.html">Interactive Map</a></li>
+                    <li><a href="ColumnView.html">Column View</a></li>
+                    <li class="active-button"><a href="#">Survey</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav pull-right-sm">
+                    <li><a href="SlideShow.html">Back to homepage</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header desktop-screen">
+        <img src = "../img/headerNou.png" class="header_image" />
+    </div>
+
+    <div class="header phone-screen">
+        <img src = "../img/HeaderPhone.png" class="header_image" />
+    </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+
+            <div class="row">
+                <h3 class="text-center titleStyle">Find out how the Nepalese people were affected by the earthquake from the results of these surveys:</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-edit col-md-offset-2">Are your main problems being addressed?</p>
+                    <div id="chartProblemAdressed"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+                            <div class="btn-group" role="group">
+                                <div id="exportProblemAdressed"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-edit col-md-offset-2">Is support provided in a fair way?</p>
+                    <div id="chartSupportProvided"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="exportSupportProvided"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-edit col-md-offset-2">What is your biggest problem?</p>
+                    <div id="chartBiggestProblem"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+                            <div class="btn-group" role="group">
+                                <div id="exportBiggestProblem"> </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                    <p class="text-edit col-md-offset-2">Are you satisfied with what NGOs are doing for you after the earthquake?</p>
+                    <div id="chartNGO"></div>
+                    <br>
+                    <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                            <div class="btn-group" role="group">
+                                <div id="exportNGO"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                <p class="text-edit col-md-offset-2">Are you satisfied with what the government is doing for you after the earthquake?</p>
+                <div id="chartGovernment"></div>
+                <br>
+                <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+                        <div class="btn-group" role="group">
+                            <div id="exportGovernment"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                <p class="text-edit col-md-offset-2">Do you need to rebuild, repair or retrofit your home because of damage caused by earthquakes?</p>
+                <div id="chartRebuild"></div>
+                <br>
+                <div class="col-md-offset-3 col-xs-offset-4 col-sm-offset-5 col-lg-offset-5">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
+
+                        <div class="btn-group" role="group">
+                            <div id="exportRebuild"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="header desktop-screen">
+        <img src ="../img/footerNou.png" class="header_image" />
+    </div>
+    <div class="header phone-screen">
+        <img src = "../img/FooterPhone.png" class="header_image" />
+    </div>
+</div>
+
+
+<!-- MENU TOGGLE SCRIPT -->
+
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+
+
+</body>
+</html>

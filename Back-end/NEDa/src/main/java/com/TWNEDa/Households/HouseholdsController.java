@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Ovidiu on 22-Apr-17.
  */
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Households API", description = "Provides a list of Nepal's household information by district", stage = ApiStage.BETA)
 public class HouseholdsController {

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Ovidiu on 22-Apr-17.
  */
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Population API", description = "Provides information about affected population by the 2015 Nepal Earthquake (total population, deaths and injured)", stage = ApiStage.BETA)
 public class PopulationController {

@@ -12,7 +12,7 @@ import java.util.List;
  * Created by eduar on 19-May-17.
  */
 
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 public class SurveyController {
 

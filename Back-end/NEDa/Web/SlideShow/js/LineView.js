@@ -20,8 +20,15 @@ google.charts.setOnLoadCallback(initialize);
     
         getRequest.send();
     }
+function clearFilters(){
+    $('#fatalities-filter').find('input').prop('checked', false);
+    $('#richter-filter').find('input').prop('checked', false);
+    initialize();
+}
 
 function initialize(){
+
+
 
     addEventHandlers();
 
