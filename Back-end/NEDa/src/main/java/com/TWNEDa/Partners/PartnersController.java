@@ -29,7 +29,7 @@ public class PartnersController {
 
     @RequestMapping("/partners/district/{distId}")
     @ApiMethod(description = "Get a list of all organisations activating in a particular district provided by ID")
-    public List<Partners> getPartnersByDistrict(@ApiPathParam(name = "distId") @PathVariable int distId){
+    public List<Partners> getPartnersByDistrict(@ApiPathParam(name = "distId", description = "Id of the district desired") @PathVariable int distId){
         return partnersService.getPartnersById(distId);
     }
 
@@ -37,11 +37,6 @@ public class PartnersController {
     @ApiMethod(description = "Add a particular organisation to the database")
     public void addData(@RequestBody Partners partner){
         partnersService.addData(partner);
-    }
-
-    @RequestMapping(method=RequestMethod.DELETE, value="partners")
-    public void  deleteTopic(@Param(value = "partnerKey")PartnersKey partnerKey){
-        partnersService.deleteData(partnerKey);
     }
 
   }

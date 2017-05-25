@@ -30,8 +30,8 @@ public class DamagesController {
     }
 
     @RequestMapping("/damages/{risk}")
-    @ApiMethod(description = "Get all damages with provided risk value (low, med, high)")
-    public List<Damage> getAllDamagesByRisk(@ApiPathParam(name = "risk") @PathVariable String risk){
+    @ApiMethod(description = "Get all damages with provided risk value")
+    public List<Damage> getAllDamagesByRisk(@ApiPathParam(name = "risk", description = "A value of this set (low, med, high)") @PathVariable String risk){
         return damagesService.getAllDamagesByRisk(risk);
     }
 
@@ -49,19 +49,19 @@ public class DamagesController {
 
     @RequestMapping("/damages/{risk}/noDescription")
     @ApiMethod(description = "Get all damages from database with NO description and provided risk value (low, med, high)")
-    public List<Damage> getAlldamagesWithRiskAndNoDescription(@ApiPathParam(name = "risk") @PathVariable String risk){
+    public List<Damage> getAlldamagesWithRiskAndNoDescription(@ApiPathParam(name = "risk", description = "A value of this set (low, med, high)") @PathVariable String risk){
         return damagesService.getAllDamagesByRiskAndNoDescription(risk, "No description available");
     }
 
     @RequestMapping("/damages/{risk}/description")
     @ApiMethod(description = "Get all damages from database with description and provided risk value (low, med, high)")
-    public List<Damage> getAllDamagesByRiskWithDescription(@ApiPathParam(name = "risk") @PathVariable String risk){
+    public List<Damage> getAllDamagesByRiskWithDescription(@ApiPathParam(name = "risk", description = "A value of this set (low, med, high)") @PathVariable String risk){
         return damagesService.getAllDamagesByRiskWithDescription(risk, "No description available"); // description that is not "No description available"
     }
 
     @RequestMapping("/damages/name/{name}")
     @ApiMethod(description = "Get damages that were reported in the location with the name provided")
-    public List<Damage> getAllDamagesByName(@ApiPathParam(name = "name") @PathVariable String name){
+    public List<Damage> getAllDamagesByName(@ApiPathParam(name = "name", description = "String with the name of a district") @PathVariable String name){
         return damagesService.getAllDamagesByName(name);
     }
 }

@@ -17,10 +17,11 @@ import java.util.List;
 @RestController
 @Api(name = "Households API", description = "Provides a list of Nepal's household information by district", stage = ApiStage.BETA)
 public class HouseholdsController {
+
     @Autowired
     private HouseholdsService householdsService;
 
-
+    @RequestMapping("/households")
     @ApiMethod(description = "Get all household information for all districts")
     public List<Household> getAllHouseholds(){
         return householdsService.getAllHouseholds();
@@ -28,26 +29,26 @@ public class HouseholdsController {
 
     @RequestMapping("households/district/{districtId}")
     @ApiMethod(description = "Get the household information for the district with provided ID")
-    public Household getDataByDistrict(@ApiPathParam(name = "districtId") @PathVariable int districtId){
+    public Household getDataByDistrict(@ApiPathParam(name = "districtId", description = "Id of the district desired") @PathVariable int districtId){
         return householdsService.getDataByDistrict(districtId);
     }
 
     @RequestMapping("households/zone/{zone}")
     @ApiMethod(description = "Get population info from a zone provided by name")
-    public List<Household> getPopulationByZone(@ApiPathParam(name = "zone") @PathVariable String zone){
+    public List<Household> getPopulationByZone(@ApiPathParam(name = "zone", description = "Name of a zone from Nepal") @PathVariable String zone){
         return householdsService.getDataByZone(zone);
     }
 
     @RequestMapping("district/household/stats/{districtId}")
     @ApiMethod(description = "Get the number of public and private buildings destroyed in a district provided by ID")
-    public Object getDistrictStats(@ApiPathParam(name = "districtId") @PathVariable int districtId){
+    public Object getDistrictStats(@ApiPathParam(name = "districtId", description = "Id of the district desired") @PathVariable int districtId){
         return householdsService.getDistrictStats(districtId);
     }
 
 
     @RequestMapping("/households/houses/{zone}")
     @ApiMethod(description = "Get the number of public and private buildings destroyed in a zone provided by name")
-    public List<Object> getDeathsbyZone(@ApiPathParam(name = "zone") @PathVariable String zone){
+    public List<Object> getHousesByZone(@ApiPathParam(name = "zone", description = "Name of a zone from Nepal") @PathVariable String zone){
         return householdsService.getHousesByZone(zone);
     }
 
@@ -61,11 +62,6 @@ public class HouseholdsController {
     @ApiMethod(description = "Update existing household info in a district provided by ID")
     public void updateTopic(@RequestBody Household household,@ApiPathParam(name = "districtId") @PathVariable int districtId){
         householdsService.updateData(household,districtId);
-    }
-
-    @RequestMapping(method=RequestMethod.DELETE, value="households/district/{districtId}")
-    public void  deleteTopic(@PathVariable int districtId){
-        householdsService.deleteData(districtId);
     }
 
 }

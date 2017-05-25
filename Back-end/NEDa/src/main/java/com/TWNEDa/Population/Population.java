@@ -1,5 +1,8 @@
 package com.TWNEDa.Population;
 
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
@@ -10,19 +13,43 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "POPULATION")
+@ApiObject(name = "Population", description = "Holds info about affected population in Nepal")
 public class Population {
     @Id
+    @ApiObjectField(description = "The id of the Nepal district that the population info refers")
     private int dist_id;
+
+    @ApiObjectField(description = "The name of the district", required = true)
     private String district;
+
+    @ApiObjectField(description = "The name of the zone that the district is part of", required = true)
     private String zone;
+
+    @ApiObjectField(description = "District's regional code", required = true)
     private String reg_code;
+
+    @ApiObjectField(description = "The zone's administration code", required = true)
     private String zone_code;
+
+    @ApiObjectField(description = "Total number of population in the district", required = true)
     private int total_population;
+
+    @ApiObjectField(description = "The number of female deaths", required = true)
     private int death_female;
+
+    @ApiObjectField(description = "The number of male deaths", required = true)
     private int death_male;
+
+    @ApiObjectField(description = "Total number of casualties reported in the district", required = true)
     private int tot_deaths;
+
+    @ApiObjectField(description = "The number of injured females", required = true)
     private int injured_female;
+
+    @ApiObjectField(description = "The number of injured males", required = true)
     private int injured_male;
+
+    @ApiObjectField(description = "Total number of injures in the district", required = true)
     private int total_injured;
 
     public Population(){};

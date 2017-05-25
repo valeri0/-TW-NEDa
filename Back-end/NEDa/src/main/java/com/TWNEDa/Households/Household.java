@@ -1,6 +1,8 @@
 package com.TWNEDa.Households;
 
 import com.TWNEDa.Population.Population;
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
 
 import javax.persistence.*;
 
@@ -9,17 +11,37 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name ="HOUSEHOLDS")
+@ApiObject(name = "Household", description = "Holds info about the condition of a district's household after the 2015 Nepal Earthquake")
 public class Household {
     @Id
+    @ApiObjectField(description = "The id of the district")
     private int dist_id;
+
+    @ApiObjectField(description = "The name of the district", required = true)
     private String district;
+
+    @ApiObjectField(description = "The name of the zone that the district is part of", required = true)
     private String zone;
+
+    @ApiObjectField(description = "The district's region code", required = true)
     private String reg_code;
+
+    @ApiObjectField(description = "The zone's administration code", required = true)
     private String zone_code;
+
+    @ApiObjectField(description = "Total number of buildings damages by the earthquake", required = true)
     private int total_household;
+
+    @ApiObjectField(description = "Total number of government buildings fully damaged", required = true)
     private int govtbuild_damage;
+
+    @ApiObjectField(description = "Total number of government buildings partially damaged", required = true)
     private int govtbuild_partdamage;
+
+    @ApiObjectField(description = "Total number of public buildings fully damaged", required = true)
     private int publicbuild_damage;
+
+    @ApiObjectField(description = "Total number of public buildings partially damaged", required = true)
     private int publicbuild_partdamage;
 
 

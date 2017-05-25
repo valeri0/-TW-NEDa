@@ -1,5 +1,8 @@
 package com.TWNEDa.Damages;
 
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,15 +12,26 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="DAMAGES")
+@ApiObject(name = "Damage", description = "Holds info about a specific reported damage made by the 2015 Nepal Earthquake")
 public class Damage {
 
+    @ApiObjectField(description = "The name of the location where the damage was reported", required = true)
     private String name;
+
+    @ApiObjectField(description = "The risk of the damage", required = true)
     private String risk;
+
+    @ApiObjectField(description = "The description of the damage")
     private String description;
+
+    @ApiObjectField(description = "The longitude of the place where the damage was reported", required = true)
     private Double longitude;
+
+    @ApiObjectField(description = "The latitude of the place where the damage was reported", required = true)
     private Double latitude;
 
     @Id
+    @ApiObjectField(description = "The id of the damage")
     private int id;
 
     public Damage(){}
