@@ -10,13 +10,8 @@
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <style>
-        .team-member{
-            margin-top: 50px;
-        }
-    </style>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../js/Districts.js"></script>
 </head>
 <body>
 
@@ -37,8 +32,8 @@
             <div class="collapse navbar-collapse" id="mainNavBar">
                 <ul class="nav navbar-nav">
                     <li><a href="SlideShow.html">Home</a></li>
-                    <li class="active"><a href="#">Contact</a></li>
-                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="active"><a href="About.html">About</a></li>
                 </ul>
             </div>
         </div>
@@ -46,25 +41,16 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                <h1 style="text-align: center;"><strong>The team</strong></h1>
-                <div class="team-member">
-                    <h2>Mihaila Andrei Valerio</h2>
-                    <h3><strong>Email:</strong><span class="text-info"> andrei.mihaila@info.uaic.ro</span></h3>
-                    <h3><strong>Github Page:</strong><a href="https://github.com/valeri0"> https://github.com/valeri0</a></h3>
-                </div>
-                <div class="team-member">
-                    <h2>Tudosa Ovidiu Stefan</h2>
-                    <h3><strong>Email:</strong><span class="text-info"> ovidiu.tudosa@info.uaic.ro</span></h3>
-                    <h3><strong>Github Page:</strong><a href="https://github.com/TudosaOvidiu"> https://github.com/TudosaOvidiu</a></h3>
-                </div>
-                <div class="team-member">
-                    <h2>Tuduri Eduard Gabriel</h2>
-                    <h3><strong>Email:</strong><span class="text-info"> eduard.tuduri@info.uaic.ro</span></h3>
-                    <h3><strong>Github Page:</strong><a href="https://github.com/eduard-tuduri"> https://github.com/eduard-tuduri</a></h3>
-                </div>
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <h1 style="text-align: center;"><strong>Districts information</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="district_table_div"></div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
