@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>NEDa-Chart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
-    <link rel="stylesheet" href="../css/Background.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../js/LineView.js"></script>
+    <meta charset="UTF-8" />
+    <title>NEDa-Earthquakes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/sidebar.css" th:href="@{/css/sidebar.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <link rel="stylesheet" href="../static/css/Background.css" th:href="@{/css/Background.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" th:src="@{https://www.gstatic.com/charts/loader.js}"></script>
+    <script src="../static/js/LineView.js" th:src="@{/js/LineView.js}"></script>
 
 
 </head>
@@ -36,13 +36,13 @@
 
                     <form id="fatalities-filter" class="fatalities-filter">
                         <div class="radio">
-                            <label><input type="radio" name="optradio"  value="0&1000">Under 1000</label>
+                            <label><input type="radio" name="optradio"  value="0&amp;1000" />Under 1000</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="1000&4000 ">1000 - 4000</label>
+                            <label><input type="radio" name="optradio" value="1000&amp;4000 " />1000 - 4000</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="4000&999999999999999999">Over 4000</label>
+                            <label><input type="radio" name="optradio" value="4000&amp;999999999999999999" />Over 4000</label>
                         </div>
                     </form>
                 </div>
@@ -55,13 +55,13 @@
                     <form id="richter-filter" class="richter-filter">
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio"  value="0&7">Under 7</label>
+                            <label><input type="radio" name="optradio"  value="0&amp;7" />Under 7</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="7&8">7 - 8</label>
+                            <label><input type="radio" name="optradio" value="7&amp;8" />7 - 8</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="8&10000">Over 8</label>
+                            <label><input type="radio" name="optradio" value="8&amp;10000" />Over 8</label>
                         </div>
                     </form>
                 </div>
@@ -95,15 +95,15 @@
             <!--Menu Items-->
             <div class="collapse navbar-collapse" id="mainNavBar">
                 <ul class="nav navbar-nav">
-                    <li class="active-button"><a href="#">Linear View</a></li>
-                    <li ><a href="MapChart.html">Map Chart</a></li>
-                    <li><a href="InteractiveMap.html">Interactive Map</a></li>
-                    <li><a href="ColumnView.html">Column View</a></li>
-                    <li><a href="Survey.html">Survey</a></li>
+                    <li class="active-button"><a href="#">Earthquakes</a></li>
+                    <li ><a href="MapChart.html" th:href="@{/Casualties}">Casualties</a></li>
+                    <li><a href="InteractiveMap.html" th:href="@{/Damages}">Reported damages</a></li>
+                    <li><a href="ColumnView.html" th:href="@{/Households}">Households</a></li>
+                    <li><a href="Survey.html" th:href="@{/Survey}">Survey</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav pull-right-sm">
-                    <li><a href="SlideShow.html">Back to homepage</a></li>
+                    <li><a href="SlideShow.html" th:href="@{/}">Back to homepage</a></li>
                 </ul>
 
             </div>
@@ -113,11 +113,11 @@
 
     <!-- Header -->
     <div class="header desktop-screen">
-        <img src = "../img/headerNou.png" class="header_image" />
+        <img src = "../static/img/headerNou.png" th:src="@{/img/headerNou.png}" class="header_image" alt="Header Image"/>
     </div>
 
     <div class="header phone-screen">
-        <img src = "../img/HeaderPhone.png" class="header_image" />
+        <img src = "../static/img/HeaderPhone.png" th:src="@{/img/HeaderPhone.png}" class="header_image" alt="HeaderPhone Image"/>
     </div>
 
     <!-- Page Content -->
@@ -159,16 +159,16 @@
 
     </div>
     <div class="header desktop-screen">
-        <img src ="../img/footerNou.png" class="header_image" />
+        <img src ="../static/img/footerNou.png" th:src="@{/img/footerNou.png}" class="header_image" alt="Footer Image"/>
     </div>
     <div class="header phone-screen">
-        <img src = "../img/FooterPhone.png" class="header_image" />
+        <img src = "../static/img/FooterPhone.png" th:src="@{/img/FooterPhone.png}" class="header_image" alt="FooterPhone Image"/>
     </div>
 </div>
 <!-- /#wrapper -->
 
 <!-- MENU TOGGLE SCRIPT -->
-<script>
+<script th:inline="javascript">
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");

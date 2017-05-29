@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>NEDa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.css">
-    <link rel="stylesheet" href="../css/SlideShow.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/SlideShow.css" th:href="@{/css/SlideShow.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
 
 
 </head>
@@ -59,7 +59,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand"><img src="../img/NEDaLogo.png" style="max-width:100px; margin-top: -7px;"></a>
+                    <a href="#" class="navbar-brand"><img src="../static/img/NEDaLogo.png" th:src="@{/img/NEDaLogo.png}" style="max-width:100px; margin-top: -7px;" alt="NEDa" /></a>
 
                 </div>
 
@@ -67,8 +67,8 @@
                 <div class="collapse navbar-collapse" id="mainNavBar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="Contact.html">Contact</a></li>
-                        <li><a href="About.html">About</a></li>
+                        <li><a href="Contact.html" th:href="@{/Contact}">Contact</a></li>
+                        <li><a href="About.html" th:href="@{/About}">About</a></li>
 
                     </ul>
                 </div>
@@ -83,18 +83,18 @@
                     Centuries-old buildings were destroyed at UNESCO World Heritage sites in the Kathmandu Valley. If you want more exact figures about the 2015 earthquake that
                     took place in Nepal, or other earthquakes that took place over there, you can enter the site.
                 </p>
-                <a href="Line.html" class="btn">Enter Site</a>
+                <a href="Line.html" class="btn" th:href="@{/Earthquakes}">Enter Site</a>
         </div>
 
 
         <div class="footer">
             <ul class="list-inline">
                 <li><a href="#">Home</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html" th:href="@{/Contact}">Contact</a></li>
+                <li><a href="About.html" th:href="@{/About}">About</a></li>
             </ul>
         </div>
-        <script>
+        <script th:inline="javascript">
             $('.carousel').carousel({
                 pause: null,
                 interval: 5500

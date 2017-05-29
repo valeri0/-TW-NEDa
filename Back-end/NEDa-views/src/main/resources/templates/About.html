@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>NEDa-About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="SlideShow.html" th:href="@{/}" class="navbar-brand"><img src="../static/img/NEDaLogo.png" th:src="@{/img/NEDaLogo.png}" style="max-width:100px; margin-top: -7px;" alt="NEDa" /></a>
+            </div>
+
+            <!--Menu Items-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="SlideShow.html" th:href="@{/}">Home</a></li>
+                    <li><a href="Contact.html" th:href="@{/Contact}">Contact</a></li>
+                    <li class="active"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+                <h1 style="text-align: center;"><span class="text-primary">Nepal Earthquake Data Explorer</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12">
+                <h2><span class="text-info">What is it ?</span></h2>
+                <p>Nepal Earthquake Data Explorer a.k.a. NEDa is a scholarship project that aims to provide and present data of the 2015 Nepal Earthquake and its aftershocks.
+                Among the data provided is: damages made by the earthquake and aftershocks; statistics about partially and fully destroyed households; efforts made to reconstruct collapsed buildings
+                and many more.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12">
+                <h2><span class="text-info">Who made it ?</span></h2>
+                <p>Three devoted students. See the <a href="Contact.html" th:href="@{/Contact}">Contact</a> page.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12">
+                <h2><span class="text-info">What did you use ?</span></h2>
+                <p>During the development period we used many suites of frameworks and libraries both on front-end and back-end. Those include: </p>
+                <h4>Front-end:</h4>
+                <ul>
+                    <li>Bootstrap: <a href="http://getbootstrap.com/" th:href="@{http://getbootstrap.com/}">http://getbootstrap.com/</a></li>
+                    <li>JQuery: <a href="https://jquery.com/" th:href="@{https://jquery.com/}">https://jquery.com/</a></li>
+                    <li>Google Charts API: <a href="https://developers.google.com/chart/" th:href="@{https://developers.google.com/chart/}">https://developers.google.com/chart/</a></li>
+                    <li>Google Maps API: <a href="https://developers.google.com/maps/" th:href="@{https://developers.google.com/maps/}">https://developers.google.com/maps/</a></li>
+                </ul>
+
+                <h4>Back-end</h4>
+                <ul>
+                    <li>Java Spring Boot: <a href="https://projects.spring.io/spring-boot/" th:href="@{https://projects.spring.io/spring-boot/}">https://projects.spring.io/spring-boot/</a></li>
+                    <li>Apache Maven: <a href="https://maven.apache.org/" th:href="@{https://maven.apache.org/}">https://maven.apache.org/</a> for library dependencies</li>
+                </ul>
+                <h4>Also lots and lots of <a href="https://stackoverflow.com/" th:href="@{https://stackoverflow.com/}"><span style="color: darkorange;">Stack Overflow</span>.</a></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12">
+                <h2><span class="text-info">That's all ?</span></h2>
+                <p>We have our own REST API. JSONDoc playground <a href="http://localhost:8081/jsondoc-ui.html" th:href="@{http://localhost:8081/jsondoc-ui.html}">here</a> (enter address <span class="text-success">http://localhost:8081/jsondoc</span>)</p>
+                <p>All information on Nepal's districts that you'll need for using the API can be found <a href="Districts.html" th:href="@{/Districts}">here</a></p>
+                <p>Presentation video <a href="https://www.youtube.com/watch?v=UwL0CNaXJ_0" th:href="@{https://www.youtube.com/watch?v=UwL0CNaXJ_0}">https://www.youtube.com/watch?v=UwL0CNaXJ_0</a> (Romanian)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>NEDa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" th:src="@{https://www.gstatic.com/charts/loader.js}"></script>
+    <script src="../static/js/Districts.js" th:src="@{/js/Districts.js}"></script>
+</head>
+<body>
+
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="SlideShow.html" th:href="@{/}" class="navbar-brand"><img src="../static/img/NEDaLogo.png" th:src="@{/img/NEDaLogo.png}" style="max-width:100px; margin-top: -7px;" alt="NEDa" /></a>
+            </div>
+
+            <!--Menu Items-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="SlideShow.html" th:href="@{/}">Home</a></li>
+                    <li><a href="Contact.html" th:href="@{/Contact}">Contact</a></li>
+                    <li class="active"><a href="About.html" th:href="@{/About}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <h1 style="text-align: center;"><strong>Districts information</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="district_table_div"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by eduar on 27-May-17.
  */
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Districts API", description = "Provides basic information about districts from Nepal", stage = ApiStage.BETA)
 public class DistrictController {

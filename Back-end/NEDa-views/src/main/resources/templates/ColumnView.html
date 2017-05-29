@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>NEDa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png">
-    <link rel="stylesheet" href='../css/Survey.css'>
-    <link rel="stylesheet" href='../css/Background.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../js/ColumnView.js"></script>
-    <script src="../js/SideBarChart.js"></script>
+    <meta charset="UTF-8" />
+    <title>NEDa-Households</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/sidebar.css" th:href="@{/css/sidebar.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <link rel="stylesheet" href="../static/css/Survey.css" th:href="@{/css/Survey.css}"/>
+    <link rel="stylesheet" href="../static/css/Background.css" th:href="@{/css/Background.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" th:src="@{https://www.gstatic.com/charts/loader.js}"></script>
+    <script src="../static/js/ColumnView.js" th:src="@{/js/ColumnView.js}"></script>
+    <script src="../static/js/SideBarChart.js" th:src="@{/js/SideBarChart.js}"></script>
 
 
 
@@ -40,60 +40,60 @@
 
                     <form class="district-options">
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="23" checked="">Sindhupalchok</label>
+                            <label><input type="radio" name="optradio" value="23" checked="" />Sindhupalchok</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="27">Kathmandu</label>
+                            <label><input type="radio" name="optradio" value="27" />Kathmandu</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="28">Nuwakot</label>
+                            <label><input type="radio" name="optradio" value="28" />Nuwakot</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="30">Dhading</label>
-                        </div>
-
-                        <div class="radio">
-                            <label><input type="radio" name="optradio" value="29">Rasuwa</label>
+                            <label><input type="radio" name="optradio" value="30" />Dhading</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="36">Gorkha</label>
+                            <label><input type="radio" name="optradio" value="29" />Rasuwa</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="26">Bhaktapur</label>
+                            <label><input type="radio" name="optradio" value="36" />Gorkha</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="24">Kavrepalanchok</label>
+                            <label><input type="radio" name="optradio" value="26" />Bhaktapur</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="22">Dolakha</label>
+                            <label><input type="radio" name="optradio" value="24" />Kavrepalanchok</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="21">Ramechhap</label>
+                            <label><input type="radio" name="optradio" value="22" />Dolakha</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="31">Makwanpur</label>
+                            <label><input type="radio" name="optradio" value="21" />Ramechhap</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="11">Solukhumbu</label>
+                            <label><input type="radio" name="optradio" value="31" />Makwanpur</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="12">Okhaldhunga</label>
+                            <label><input type="radio" name="optradio" value="11" />Solukhumbu</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="20">Sindhuli</label>
+                            <label><input type="radio" name="optradio" value="12" />Okhaldhunga</label>
                         </div>
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" value="25">Latitpur</label>
+                            <label><input type="radio" name="optradio" value="20" />Sindhuli</label>
+                        </div>
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="25" />Latitpur</label>
                         </div>
 
                     </form>
@@ -128,16 +128,16 @@
             <!--Menu Items-->
             <div class="collapse navbar-collapse" id="mainNavBar">
                 <ul class="nav navbar-nav">
-                    <li><a href="Line.html">Linear View</a></li>
-                    <li ><a href="MapChart.html">Map Chart</a></li>
-                    <li><a href="InteractiveMap.html">Interactive Map</a></li>
-                    <li class="active-button"><a href="#">Column View</a></li>
-                    <li><a href="Survey.html">Survey</a></li>
+                    <li><a href="Line.html" th:href="@{/Earthquakes}">Earthquakes</a></li>
+                    <li ><a href="MapChart.html" th:href="@{/Casualties}">Casualties</a></li>
+                    <li><a href="InteractiveMap.html" th:href="@{/Damages}">Reported damages</a></li>
+                    <li class="active-button"><a href="#">Households</a></li>
+                    <li><a href="Survey.html" th:href="@{/Survey}">Survey</a></li>
 
                 </ul>
 
                 <ul class="nav navbar-nav pull-right-sm">
-                    <li><a href="SlideShow.html">Back to homepage</a></li>
+                    <li><a href="SlideShow.html" th:href="@{/}">Back to homepage</a></li>
                 </ul>
             </div>
 
@@ -146,11 +146,11 @@
 
     <!-- Header -->
     <div class="header desktop-screen">
-        <img src = "../img/headerNou.png" class="header_image" />
+        <img src = "../static/img/headerNou.png" th:src="@{/img/headerNou.png}" class="header_image" alt="Header Image"/>
     </div>
 
     <div class="header phone-screen">
-        <img src = "../img/HeaderPhone.png" class="header_image" />
+        <img src = "../static/img/HeaderPhone.png" th:src="@{/img/HeaderPhone.png}" class="header_image" alt="HeaderPhone Image"/>
     </div>
 
     <!-- Page Content -->
@@ -182,7 +182,7 @@
                         <div class="btn-toolbar" role="toolbar" aria-label="Basic example">
 
                             <div class="btn-group" role="group">
-                                <div id="exportHouseholds_png"> </div>
+                                <div id="exportHouseholds_png"></div>
                             </div>
                         </div>
                     </div>
@@ -208,20 +208,19 @@
             </div>
 
         </div>
+        <!-- Footer-->
         <div class="header desktop-screen">
-            <img src ="../img/footerNou.png" class="header_image" />
+            <img src ="../static/img/footerNou.png" th:src="@{/img/footerNou.png}" class="header_image" alt="Footer Image"/>
         </div>
         <div class="header phone-screen">
-            <img src = "../img/FooterPhone.png" class="header_image" />
+            <img src = "../static/img/FooterPhone.png" th:src="@{/img/FooterPhone.png}" class="header_image" alt="FooterPhone Image"/>
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
-</div>
 <!-- /#wrapper -->
 
 <!-- MENU TOGGLE SCRIPT -->
-<script>
+<script th:inline="javascript">
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");

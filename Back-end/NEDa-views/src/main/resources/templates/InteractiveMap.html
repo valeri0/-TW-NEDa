@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>NEDa-Reported Damages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+    <link rel="stylesheet" href="../static/css/sidebar.css" th:href="@{/css/sidebar.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css}"/>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png" th:href="@{https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-256.png}"/>
+    <link rel="stylesheet" href='../static/css/Background.css' th:href="@{/css/Background.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" th:src="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+    <script src="../static/js/InteractiveMap.js" th:src="@{/js/InteractiveMap.js}"></script>
+	
+<style>
+    #map{
+        width: 100%;
+        height: 800px;
+    }
+</style>
+	
+</head>
+
+<body>
+
+<div id="wrapper" class="row" style="background-color: #f3f1ed ">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h3>Filters</h3>
+            </li>
+            <li>
+                <input id="searchBar" type="search" name="search" placeholder="Search.." onsearch="search();" />
+            </li>
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Risk :</a>
+
+                    <form id="riskForm">
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="low" />Low</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="med" />Medium</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="high" />High</label>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="radio-filter">
+                    <a href="#">Description :</a>
+
+                    <form id="descriptionForm">
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="hasDescription" />Has description</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" value="noDescription" />No description</label>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <button class="btn btn-default" onclick="clearFilters();">Clear filters</button>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Button for controlling the sidebar -->
+                <a id="menu-toggle" href="#" class="navbar-brand">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </a>
+
+            </div>
+
+            <!--Menu Items-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="Line.html" th:href="@{/Earthquakes}">Earthquakes</a></li>
+                    <li ><a href="MapChart.html" th:href="@{/Casualties}">Casualties</a></li>
+                    <li class="active-button"><a href="#">Reported damages</a></li>
+                    <li><a href="ColumnView.html" th:href="@{/Households}">Households</a></li>
+                    <li><a href="Survey.html" th:href="@{/Survey}">Survey</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right-sm">
+                    <li><a href="SlideShow.html" th:href="@{/}">Back to homepage</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Header -->
+    <div class="header desktop-screen">
+        <img src = "../static/img/headerNou.png" th:src="@{/img/headerNou.png}" class="header_image" alt="Header Image"/>
+    </div>
+
+    <div class="header phone-screen">
+        <img src = "../static/img/HeaderPhone.png" th:src="@{/img/HeaderPhone.png}" class="header_image" alt="HeaderPhone Image"/>
+    </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <button class="btn btn-danger" style="margin-bottom: 10px; white-space: normal;" onclick="toEarthquakeLayer()">Earthquake Layer</button>
+                    <button class="btn btn-warning" style="margin-bottom: 10px; white-space: normal;" onclick="toAftershockLayer()">Aftershock Layer</button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <!-- Interactive Map -->
+                        <div id="map"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    <!-- Footer-->
+    <div class="header desktop-screen">
+        <img src ="../static/img/footerNou.png" th:src="@{/img/footerNou.png}" class="header_image" alt="Footer Image"/>
+    </div>
+    <div class="header phone-screen">
+        <img src = "../static/img/FooterPhone.png" th:src="@{/img/FooterPhone.png}" class="header_image" alt="FooterPhone Image"/>
+    </div>
+
+</div>
+
+<!-- /#wrapper -->
+
+<!-- SIDEBAR SCRIPT -->
+<script src="../static/js/sidebar.js" th:src="@{/js/sidebar.js}"></script>
+
+<script async="" defer=""
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyfB7FJC_mbyQGI7rAB5QtBiLKpTucyg&amp;callback=initMap"
+        th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyfB7FJC_mbyQGI7rAB5QtBiLKpTucyg&amp;callback=initMap}">
+</script>
+
+</body>
+</html>
