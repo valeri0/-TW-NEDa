@@ -1,0 +1,87 @@
+.header{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_image{
+    height: 100%;
+    width: 100%;
+}
+
+#wrapper{
+    background-color: #cee5f7;
+}
+
+.phone-screen{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .phone-screen{display: inherit;}
+    .desktop-screen{display: none;}
+    .navbar-inverse{background: rgba(55, 186, 241,1)!important;}
+}
+
+.navbar-inverse{
+    background: rgba(39, 170, 225, 1);
+}
+
+.navbar{
+    border: 0px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #ffffff;
+    filter:contrast(80%);
+}
+
+.navbar-inverse .navbar-toggle{
+    border: 0px;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: rgba(39, 170, 225, 1);
+    filter:contrast(80%);
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #ffffff;
+    filter:contrast(80%);
+}
+
+.titleStyle{
+    margin-bottom: 100px;
+    font-weight: bold;
+    color: rgb(0, 71, 115);
+
+}
+
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(39, 170, 225, 1);
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #ffffff;
+}
+
+.active-button{
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}

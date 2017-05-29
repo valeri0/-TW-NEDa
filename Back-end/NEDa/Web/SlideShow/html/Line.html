@@ -34,9 +34,9 @@
                 <div class="radio-filter">
                     <a href="#">Fatalities :</a>
 
-                    <form class="fatalities-filter">
+                    <form id="fatalities-filter" class="fatalities-filter">
                         <div class="radio">
-                            <label><input type="radio" name="optradio" checked="" value="0&1000">Under 1000</label>
+                            <label><input type="radio" name="optradio"  value="0&1000">Under 1000</label>
                         </div>
                         <div class="radio">
                             <label><input type="radio" name="optradio" value="1000&4000 ">1000 - 4000</label>
@@ -52,10 +52,10 @@
                 <div class="radio-filter">
                     <a href="#">Richter scale :</a>
 
-                    <form class="richter-filter">
+                    <form id="richter-filter" class="richter-filter">
 
                         <div class="radio">
-                            <label><input type="radio" name="optradio" checked="" value="0&7">Under 7</label>
+                            <label><input type="radio" name="optradio"  value="0&7">Under 7</label>
                         </div>
                         <div class="radio">
                             <label><input type="radio" name="optradio" value="7&8">7 - 8</label>
@@ -65,6 +65,9 @@
                         </div>
                     </form>
                 </div>
+            </li>
+            <li>
+                <button class="btn btn-default" onclick="clearFilters();">Clear filters</button>
             </li>
 
         </ul>

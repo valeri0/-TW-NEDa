@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Valerio on 4/28/2017.
  */
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Partners API", description = "Provides a list of organisations that are helping with building reconstruction", stage = ApiStage.ALPHA)
 public class PartnersController {

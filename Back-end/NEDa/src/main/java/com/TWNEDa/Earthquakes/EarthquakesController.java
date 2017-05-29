@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Valerio on 4/30/2017.
  */
 
-@CrossOrigin("http://localhost:63342")
+@CrossOrigin("http://localhost:7000")
 @RestController
 @Api(name = "Earthquakes API", description = "Provides a list of reported Nepal earthquakes", stage = ApiStage.ALPHA)
 public class EarthquakesController {
